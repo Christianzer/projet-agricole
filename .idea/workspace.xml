@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111643_create_type_diplomes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111643_create_type_diplomes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111658_create_type_pieces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111658_create_type_pieces_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111722_create_type_cultures_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111722_create_type_cultures_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111754_create_methode_cultures_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111754_create_methode_cultures_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +201,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599223994312">
