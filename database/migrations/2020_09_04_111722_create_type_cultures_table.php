@@ -15,6 +15,7 @@ class CreateTypeCulturesTable extends Migration
     {
         Schema::create('type_cultures', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle_type_cult');
             $table->timestamps();
         });
     }

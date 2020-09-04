@@ -14,7 +14,8 @@ class CreateMethodeCulturesTable extends Migration
     public function up()
     {
         Schema::create('methode_cultures', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary()->autoIncrement();
+            $table->string('libelle_methode');
             $table->timestamps();
         });
     }

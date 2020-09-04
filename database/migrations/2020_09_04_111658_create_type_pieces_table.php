@@ -15,6 +15,7 @@ class CreateTypePiecesTable extends Migration
     {
         Schema::create('type_pieces', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle_type_pieces');
             $table->timestamps();
         });
     }
