@@ -14,7 +14,7 @@ class CreateCandidatsTable extends Migration
     public function up()
     {
         Schema::create('candidats', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
+            $table->id();
             $table->string("photo_candidat");
             $table->string("nom_candidat");
             $table->string("prenom_candidat");

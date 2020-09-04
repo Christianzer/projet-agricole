@@ -16,7 +16,6 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/all.min.css')}}" rel="stylesheet">
-    <!-- CSS FILES End -->
 </head>
 <body>
 <div class="wrapper home2">
@@ -146,6 +145,7 @@
 <script src="{{asset('assets/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('assets/js/isotope.min.js')}}"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
+
 </body>
 
 </html>
