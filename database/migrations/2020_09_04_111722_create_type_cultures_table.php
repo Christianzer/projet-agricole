@@ -14,7 +14,7 @@ class CreateTypeCulturesTable extends Migration
     public function up()
     {
         Schema::create('type_cultures', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_type_cultures');
             $table->string('libelle_type_cultures');
             $table->timestamps();
         });
