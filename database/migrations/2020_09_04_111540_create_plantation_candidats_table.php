@@ -15,6 +15,12 @@ class CreatePlantationCandidatsTable extends Migration
     {
         Schema::create('plantation_candidats', function (Blueprint $table) {
             $table->id();
+            $table->integer("id_type_culture");
+            $table->string("localisation_plantation");
+            $table->string("superficie_plantation");
+            $table->integer("id_methode_culture");
+            $table->string("certificat_propriete");
+            $table->integer("id_candidat");
             $table->timestamps();
         });
     }

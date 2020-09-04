@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="">
+    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="create type_pieces">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111658_create_type_pieces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111658_create_type_pieces_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111540_create_plantation_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111540_create_plantation_candidats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111558_create_employe_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111558_create_employe_candidats_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +188,14 @@
       <workItem from="1599217062392" duration="9078000" />
       <workItem from="1599226439194" duration="256000" />
     </task>
+    <task id="LOCAL-00001" summary="create type_pieces">
+      <created>1599223934535</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599223934535</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,11 +213,23 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create type_pieces" />
+    <option name="LAST_COMMIT_MESSAGE" value="create type_pieces" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599223994312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599223994312" />
+    <state width="535" height="446" key="SwitcherDM" timestamp="1599224395339">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="535" height="446" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1599224395339" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1599223945068">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1599224078643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
