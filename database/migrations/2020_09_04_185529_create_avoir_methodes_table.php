@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlantationCandidatsTable extends Migration
+class CreateAvoirMethodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePlantationCandidatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('plantation_candidats', function (Blueprint $table) {
-            $table->id('id_plant');
-            $table->string("localisation_plantation");
-            $table->string("superficie_plantation");
-            $table->string("certificat_propriete");
+        Schema::create('avoir_methodes', function (Blueprint $table) {
+            $table->id('avoir_meth');
+            $table->integer('id_plant');
+            $table->integer('id_methode');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePlantationCandidatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plantation_candidats');
+        Schema::dropIfExists('avoir_methodes');
     }
 }

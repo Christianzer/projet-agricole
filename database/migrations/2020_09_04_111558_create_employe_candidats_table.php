@@ -14,13 +14,12 @@ class CreateEmployeCandidatsTable extends Migration
     public function up()
     {
         Schema::create('employe_candidats', function (Blueprint $table) {
-            $table->id();
-            $table->integer("id_candidat");
+            $table->id('id_empl_cand');
             $table->integer("nombre_employe");
             $table->integer("nombre_femme");
             $table->integer("salaire_moyen");
-            $table->boolean("mineur")->default(1);
-            $table->string("piece_employe");
+            $table->integer("mineur")->default(1);
+            $table->string("certificat_employe");
             $table->timestamps();
         });
     }

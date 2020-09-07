@@ -18,9 +18,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div>
+                        <h3>CONDITIONS D'INSCRIPTION</h3>
 
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!--Causes End-->

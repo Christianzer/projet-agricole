@@ -9,7 +9,7 @@
                 <div class="container">
                     <strong>Save Environment for Future</strong>
                     <h1>Think Green & Plant Trees</h1>
-                    <a href="{{route('candidat.inscription')}}">INSCRIPTION AU CONCOURS</a>
+                    <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
             <img src="{{asset('assets/images/h3slide1.jpg')}}" alt="">
@@ -19,7 +19,7 @@
                 <div class="container">
                     <strong>Before it’s too late for our lives</strong>
                     <h1>Save Water for Generations </h1>
-                    <a href="{{route('candidat.inscription')}}">INSCRIPTION AU CONCOURS</a>
+                    <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
             <img src="{{asset('assets/images/h3slide2.jpg')}}" alt="">
@@ -29,7 +29,7 @@
                 <div class="container">
                     <strong>Generate & Store Energy by</strong>
                     <h1>Install Windmills & Turbines </h1>
-                    <a href="{{route('candidat.inscription')}}">INSCRIPTION AU CONCOURS</a>
+                    <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
             <img src="{{asset('assets/images/h3slide3.jpg')}}" alt="">

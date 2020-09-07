@@ -14,18 +14,15 @@ class CreateCandidatsTable extends Migration
     public function up()
     {
         Schema::create('candidats', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_cand');
             $table->string("photo_candidat");
             $table->string("nom_candidat");
             $table->string("prenom_candidat");
             $table->date("date_naiss_candidat");
             $table->string("lieu_nais_candidat");
             $table->string("nationalite_candidat");
-            $table->integer("id_type_diplome");
             $table->integer("contact_candidat");
             $table->string("mail_candidat");
-            $table->integer("id_type_piece");
-            $table->integer("num_piece");
             $table->timestamps();
         });
     }
