@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AvoirDiplome extends Model
 {
     //
-    protected $table = "AvoirDiplomes";
+    protected $table = "avoir_diplomes";
     protected $fillable = ['num_dip,img_dip'];
 
 }

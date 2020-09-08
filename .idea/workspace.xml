@@ -19,12 +19,54 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="create type_pieces">
+    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="maj3.1">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Inscription/Plantation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552525.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552627.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552772.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552866.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552927.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552950.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552982.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599553024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599553042.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554450.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554501.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554615.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554699.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554779.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554914.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554938.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554955.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554994.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555058.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555098.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555153.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555194.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599567669.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599568227.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599568606.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599569762.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111540_create_plantation_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111540_create_plantation_candidats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111558_create_employe_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111558_create_employe_candidats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/plantation_candidat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
+    <list id="49ca43ac-8db1-4282-8e04-8699a9fe993f" name="maj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,24 +192,31 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-oci8" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-pdo-via-oci8" />
     </include_path>
   </component>
   <component name="ProjectId" id="1h2lRdehBVPUA1HtH8MRCleLL97" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../laragon/syge-2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Christian\Desktop\projet\projet-agricole\public\inscription" />
       <recent name="C:\Users\Christian\Desktop\projet\projet-agricole\public\assets" />
     </key>
   </component>
@@ -181,12 +230,21 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="" />
+      <changelist id="49ca43ac-8db1-4282-8e04-8699a9fe993f" name="maj" comment="" />
       <created>1599217061169</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599217061169</updated>
       <workItem from="1599217062392" duration="9078000" />
       <workItem from="1599226439194" duration="256000" />
+      <workItem from="1599229819841" duration="24134000" />
+      <workItem from="1599370598852" duration="6878000" />
+      <workItem from="1599393050858" duration="46000" />
+      <workItem from="1599475329830" duration="6877000" />
+      <workItem from="1599498584680" duration="6000" />
+      <workItem from="1599501884589" duration="20525000" />
+      <workItem from="1599551000764" duration="5420000" />
+      <workItem from="1599567148148" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="create type_pieces">
       <created>1599223934535</created>
@@ -195,7 +253,28 @@
       <option name="project" value="LOCAL" />
       <updated>1599223934535</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modif">
+      <created>1599233862919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599233862919</updated>
+    </task>
+    <task id="LOCAL-00003" summary="maj">
+      <created>1599488496003</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599488496003</updated>
+    </task>
+    <task id="LOCAL-00004" summary="maj3.1">
+      <created>1599489245941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599489245941</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,25 +293,62 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="create type_pieces" />
-    <option name="LAST_COMMIT_MESSAGE" value="create type_pieces" />
+    <MESSAGE value="modif" />
+    <MESSAGE value="maj" />
+    <MESSAGE value="maj3.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj3.1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599223994312">
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599223994312" />
+    <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599545346484" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599547743644">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1599547743644" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1599229744179">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1599229744179" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599393092842">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599393092842" />
+    <state x="348" y="87" key="NewPhpClassDialog" timestamp="1599314177717">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="348" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1599314177717" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599289055289">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599289055289" />
     <state width="535" height="446" key="SwitcherDM" timestamp="1599224395339">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="535" height="446" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1599224395339" />
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1599223945068">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1599224078643">
+    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1599489225286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599224078643" />
+    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1599489225286" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599489252450">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599489252450" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599229867550">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1599229867550" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1599524250030">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1599524250030" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1599290670589">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1599290670589" />
   </component>
 </project>

@@ -15,6 +15,8 @@ class CreateAvoirDiplomesTable extends Migration
     {
         Schema::create('avoir_diplomes', function (Blueprint $table) {
             $table->id('id_av_dip');
+            $table->integer('diplomes');
+            $table->integer('id_cand');
             $table->string('num_dip');
             $table->string('img_dip');
             $table->timestamps();

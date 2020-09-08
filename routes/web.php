@@ -18,5 +18,5 @@ Route::get('/', function () {
 })->name('acceuil');
 
 Route::get('/concours','Inscription\InscriptionControllers@index')->name('candidat');
-Route::get('/concours/inscription','Inscription\InscriptionControllers@inscription')->name('candidat.inscription');
+Route::resource('/concours/inscription','InscriptionControllers');
 

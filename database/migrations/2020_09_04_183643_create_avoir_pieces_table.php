@@ -15,6 +15,8 @@ class CreateAvoirPiecesTable extends Migration
     {
         Schema::create('avoir_pieces', function (Blueprint $table) {
             $table->id('id_av_pi');
+            $table->integer('pieces');
+            $table->integer('id_cand');
             $table->string('num_pi');
             $table->string('img_pi');
             $table->timestamps();
