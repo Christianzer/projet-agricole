@@ -16,6 +16,8 @@ use App\Models\Inscription\type_culture;
 use App\Models\Inscription\type_diplome;
 use App\Models\Inscription\type_piece;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class InscriptionControllers extends Controller
 {
@@ -59,23 +61,6 @@ class InscriptionControllers extends Controller
     public function store(Request $request)
     {
 
-        //insertion plantation
-        $plant_candidat = new Plantation();
-        $plant_candidat->localisation_plantation = $request->input('lo_plant');
-        $plant_candidat->superficie_plantation = $request->input('sup_plan');
-        if ($request->hasFile('cer_prop')){
-            $filepro = $request->file('cer_prop');
-            $extensionpro = $filepro->getClientOriginalExtension();
-            $filenamepro = time().'.'.$extensionpro;
-            $filepro->move('dossier/fichier',$filenamepro);
-            $plant_candidat->certificat_propriete = $filepro;
-        }else{
-            $plant_candidat->certificat_propriete = '';
-        }
-
-        $plant_candidat->save();
-
-
 
         //insertion candidat
         $candidat = new candidat();
@@ -97,7 +82,26 @@ class InscriptionControllers extends Controller
         }else{
             $candidat->photo_candidat = '';
         }
-        $candidat->save();
+        $result_cand =(boolean)$candidat->save();
+
+
+
+        //insertion plantation
+        $plant_candidat = new Plantation();
+        $plant_candidat->localisation_plantation = $request->input('lo_plant');
+        $plant_candidat->superficie_plantation = $request->input('sup_plan');
+        if ($request->hasFile('cer_prop')){
+            $filepro = $request->file('cer_prop');
+            $extensionpro = $filepro->getClientOriginalExtension();
+            $filenamepro = time().'.'.$extensionpro;
+            $filepro->move('dossier/fichier',$filenamepro);
+            $plant_candidat->certificat_propriete = $filepro;
+        }else{
+            $plant_candidat->certificat_propriete = '';
+        }
+
+        $result_plant = (boolean) $plant_candidat->save();
+
 
 
 
@@ -116,7 +120,7 @@ class InscriptionControllers extends Controller
         }else{
             $employe->certificat_employe = '';
         }
-        $employe->save();
+        $result_empl =(boolean)$employe->save();
 
 
         //inserer piece
@@ -133,7 +137,8 @@ class InscriptionControllers extends Controller
         }else{
             $piece->img_pi = '';
         }
-        $piece->save();
+        $result_piece =(boolean)$piece->save();
+
 
         //inserer diplome
         $diplome = new AvoirDiplome();
@@ -150,29 +155,35 @@ class InscriptionControllers extends Controller
         }else{
             $diplome->img_dip = '';
         }
-        $diplome->save();
+        $result_dipl =(boolean)$diplome->save();
 
         //insertion avoir culture
         $culture = new AvoirCulture();
         $culture->id_plant = $plant_candidat->id;
         $culture->id_type_cult = $request->input('culture');
-        $culture->save();
+        $result_cult =(boolean) $culture->save();
 
         //insertion methode
         $methode = new AvoirMethode();
         $methode->id_plant = $plant_candidat->id;
         $methode->id_methode = $request->input('meth_cult');
-        $methode->save();
+        $result_meth=(boolean)$methode->save();
 
         //insertion dossier
         $dossier = new DossierInscription();
-        $dossier->identifiant_candidat = 'ok';
-        $dossier->mot_de_passe = bcrypt('ok1234');
+        $dossier->identifiant_candidat = $candidat->mail_candidat;
+        $mot_de_passe = Str::random();
+        $dossier->mot_de_passe = Hash::make($mot_de_passe);
         $dossier->id_cand = $candidat->id;
         $dossier->id_plant = $plant_candidat->id;
         $dossier->id_empl_cand = $employe->id;
         $dossier->date_inscription = date('y-d-m');
-        $dossier->save();
+        $result_dossier =(boolean) $dossier->save();
+
+
+        if ($result_cand && $result_plant && $result_dipl && $result_piece && $result_empl && $result_empl && $result_meth && $result_cult && $result_dossier ){
+            //redirection
+        }
 
 
     }
