@@ -17,7 +17,7 @@ class CreateAvoirMethodesTable extends Migration
             $table->id('avoir_meth');
             $table->integer('id_plant');
             $table->integer('id_methode');
-            $table->timestamps();
+
         });
     }
 

@@ -17,14 +17,10 @@ class types_diplomes extends Seeder
         \DB::table('type_diplomes')->insert(array(
 
             1=> array(
-                'libelle_type_diplomes' => 'BAC',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_type_diplomes' => 'BAC'
             ),
             2=> array(
-                'libelle_type_diplomes' => 'BEPC',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_type_diplomes' => 'BEPC'
             )
         ));
 

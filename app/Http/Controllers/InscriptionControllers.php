@@ -41,23 +41,6 @@ class InscriptionControllers extends Controller
         return view('Inscription/inscription')->with('listes_pieces',$listes_pieces)->with('listes_diplomes',$listes_diplomes)->with('listes_cultures',$listes_cultures)->with('listes_methodes',$listes_methodes);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -77,7 +60,7 @@ class InscriptionControllers extends Controller
             $file = $request->file('photo');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $file->move('dossier/fichier',$filename);
+            $file->move('dossier/fichier/candidat',$filename);
             $candidat->photo_candidat = $filename;
         }else{
             $candidat->photo_candidat = '';
@@ -94,7 +77,7 @@ class InscriptionControllers extends Controller
             $filepro = $request->file('cer_prop');
             $extensionpro = $filepro->getClientOriginalExtension();
             $filenamepro = time().'.'.$extensionpro;
-            $filepro->move('dossier/fichier',$filenamepro);
+            $filepro->move('dossier/fichier/certificat',$filenamepro);
             $plant_candidat->certificat_propriete = $filepro;
         }else{
             $plant_candidat->certificat_propriete = '';
@@ -115,7 +98,7 @@ class InscriptionControllers extends Controller
             $fileemp = $request->file('cert_empl');
             $extensionemp = $fileemp->getClientOriginalExtension();
             $filenaemp = time().'.'.$extensionemp;
-            $fileemp->move('dossier/fichier',$filenaemp);
+            $fileemp->move('dossier/fichier/employe',$filenaemp);
             $employe->certificat_employe = $fileemp;
         }else{
             $employe->certificat_employe = '';
@@ -132,7 +115,7 @@ class InscriptionControllers extends Controller
             $filepiece = $request->file('img_piece');
             $extensionpiece = $filepiece->getClientOriginalExtension();
             $filenamepiece = time().'.'.$extensionpiece;
-            $filepiece->move('dossier/fichier',$filenamepiece);
+            $filepiece->move('dossier/fichier/pieces',$filenamepiece);
             $piece->img_pi = $filepiece;
         }else{
             $piece->img_pi = '';
@@ -150,7 +133,7 @@ class InscriptionControllers extends Controller
             $filedipl = $request->file('img_dipl');
             $extensiondipl = $filedipl->getClientOriginalExtension();
             $filenamedipl = time().'.'.$extensiondipl;
-            $filedipl->move('dossier/fichier',$filenamedipl);
+            $filedipl->move('dossier/fichier/diplomes',$filenamedipl);
             $diplome->img_dip = $filedipl;
         }else{
             $diplome->img_dip = '';
@@ -183,53 +166,13 @@ class InscriptionControllers extends Controller
 
         if ($result_cand && $result_plant && $result_dipl && $result_piece && $result_empl && $result_empl && $result_meth && $result_cult && $result_dossier ){
             //redirection
+
+            return view('Inscription/finish')->with('dossiers',$dossier);
         }
 
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

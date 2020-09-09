@@ -17,7 +17,7 @@ class CreateAvoirCulturesTable extends Migration
             $table->id('id_av_cult');
             $table->integer('id_plant');
             $table->integer('id_type_cult');
-            $table->timestamps();
+
         });
     }
 

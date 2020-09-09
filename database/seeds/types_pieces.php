@@ -17,24 +17,16 @@ class types_pieces extends Seeder
 
         \DB::table('type_pieces')->insert(array(
             1=> array(
-                'libelle_piece' => 'CNI',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_piece' => 'CNI'
             ),
             2=> array(
-                'libelle_piece' => 'ATTESTATION IDENTITE',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_piece' => 'ATTESTATION IDENTITE'
             ),
             3=> array(
-                'libelle_piece' => 'PASSEPORT',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_piece' => 'PASSEPORT'
             ),
             4=> array(
-                'libelle_piece' => 'PERMIS DE CONDUIRE',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_piece' => 'PERMIS DE CONDUIRE'
             ),
 
         ));

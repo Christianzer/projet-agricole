@@ -18,7 +18,7 @@ class CreatePlantationCandidatsTable extends Migration
             $table->string("localisation_plantation");
             $table->string("superficie_plantation");
             $table->string("certificat_propriete");
-            $table->timestamps();
+
         });
     }
 

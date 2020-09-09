@@ -17,19 +17,13 @@ class Methode extends Seeder
         \DB::table('methode_cultures')->insert(array(
 
             1=> array(
-                'libelle_methodes_cultures' => 'BIO',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_methodes_cultures' => 'BIO'
             ),
             2=> array(
-                'libelle_methodes_cultures' => 'ENGRAIS',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_methodes_cultures' => 'ENGRAIS'
             ),
             3=> array(
-                'libelle_methodes_cultures' => 'IRRIGATION',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_methodes_cultures' => 'IRRIGATION'
             )
         ));
     }

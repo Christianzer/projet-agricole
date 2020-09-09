@@ -17,14 +17,10 @@ class Culture extends Seeder
         \DB::table('type_cultures')->insert(array(
 
             1=> array(
-                'libelle_type_cultures' => 'CAFE',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_type_cultures' => 'CAFE'
             ),
             2=> array(
-                'libelle_type_cultures' => 'CACAO',
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'libelle_type_cultures' => 'CACAO'
             )
         ));
     }

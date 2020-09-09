@@ -9,4 +9,5 @@ class AvoirMethode extends Model
     //
     protected $table = 'avoir_methodes';
     protected $fillable = ['id_plant','id_methode'];
+    protected $timestamps = false;
 }

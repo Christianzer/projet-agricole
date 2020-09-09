@@ -19,7 +19,7 @@ class CreateAvoirDiplomesTable extends Migration
             $table->integer('id_cand');
             $table->string('num_dip');
             $table->string('img_dip');
-            $table->timestamps();
+
         });
     }
 

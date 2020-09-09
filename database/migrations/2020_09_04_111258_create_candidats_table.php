@@ -23,7 +23,6 @@ class CreateCandidatsTable extends Migration
             $table->string("nationalite_candidat");
             $table->integer("contact_candidat");
             $table->string("mail_candidat");
-            $table->timestamps();
         });
     }
 

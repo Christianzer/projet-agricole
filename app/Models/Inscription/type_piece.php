@@ -7,4 +7,5 @@ class type_piece extends Model
     //
     protected $table = "type_pieces";
     protected $fillable = ['libelle_piece'];
+    protected $timestamps = false;
 }

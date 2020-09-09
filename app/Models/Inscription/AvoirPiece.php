@@ -10,4 +10,5 @@ class AvoirPiece extends Model
 
     protected $table = "avoir_pieces";
     protected $fillable = ['num_pi,img_pi'];
+    protected $timestamps = false;
 }

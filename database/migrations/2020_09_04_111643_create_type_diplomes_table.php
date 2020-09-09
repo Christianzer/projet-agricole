@@ -16,7 +16,7 @@ class CreateTypeDiplomesTable extends Migration
         Schema::create('type_diplomes', function (Blueprint $table) {
             $table->id('id_type_diplomes');
             $table->string('libelle_type_diplomes');
-            $table->timestamps();
+
         });
     }
 

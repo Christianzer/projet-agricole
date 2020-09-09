@@ -20,7 +20,7 @@ class CreateEmployeCandidatsTable extends Migration
             $table->integer("salaire_moyen");
             $table->integer("mineur")->default(1);
             $table->string("certificat_employe");
-            $table->timestamps();
+
         });
     }
 
