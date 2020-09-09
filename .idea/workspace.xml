@@ -20,50 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="maj3.1">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Inscription/Plantation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552525.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552627.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552772.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552866.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552927.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552950.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552982.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599553024.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599553042.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554450.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554501.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554615.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554699.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554779.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554914.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554938.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554955.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599554994.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555024.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555058.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555098.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555153.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599555194.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599567669.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599568227.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599568606.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599569762.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/coche.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cacao.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cacao1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cafe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_pan1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/img_plan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Inscription/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/plantation_candidat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <list id="49ca43ac-8db1-4282-8e04-8699a9fe993f" name="maj" comment="" />
@@ -210,7 +182,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../laragon/syge-2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Ecova-Environmental-Bootstrap-Template/Ecova-Environmental-Bootstrap-Template" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -305,6 +277,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599545346484" />
+    <state x="437" y="185" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599609256444">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="437" y="185" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599609256444" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599547743644">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -313,10 +289,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1599229744179" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599393092842">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="463" y="126" key="FileChooserDialogImpl" timestamp="1599603168433">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599393092842" />
+    <state x="463" y="126" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1599603168433" />
     <state x="348" y="87" key="NewPhpClassDialog" timestamp="1599314177717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -333,11 +310,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1599489225286" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599489252450">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1599666939725">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599489252450" />
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599666939725" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599229867550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

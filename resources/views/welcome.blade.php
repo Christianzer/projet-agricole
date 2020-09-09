@@ -7,8 +7,8 @@
         <div class="item">
             <div class="slider-caption h3slider">
                 <div class="container">
-                    <strong>Save Environment for Future</strong>
-                    <h1>Think Green & Plant Trees</h1>
+                    <strong>Côte d'Ivoire</strong>
+                    <h1>Meilleur agriculteur café-cacao</h1>
                     <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
@@ -17,8 +17,8 @@
         <div class="item">
             <div class="slider-caption h3slider">
                 <div class="container">
-                    <strong>Before it’s too late for our lives</strong>
-                    <h1>Save Water for Generations </h1>
+                    <strong>2020-2021</strong>
+                    <h1>Lancement du concours</h1>
                     <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
@@ -27,8 +27,8 @@
         <div class="item">
             <div class="slider-caption h3slider">
                 <div class="container">
-                    <strong>Generate & Store Energy by</strong>
-                    <h1>Install Windmills & Turbines </h1>
+                    <strong>Café-Cacao</strong>
+                    <h1>1ère Edition nationale</h1>
                     <a href="{{route('candidat')}}">INSCRIPTION AU CONCOURS</a>
                 </div>
             </div>
@@ -44,62 +44,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="donation-wrap">
-                        <h2>We are Committed to Stop Global Warming</h2>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <ul class="funds">
-                            <li class="text-left"><strong>73%</strong> Funded</li>
-                            <li class="text-center"><strong>$948.00</strong> Raised</li>
-                            <li class="text-right"><strong>$1750.00</strong> Required</li>
-                        </ul>
-                        <form>
-                            <ul class="radio-boxes">
-                                <li>
-                                    <div class="radio custom">
-                                        <input name="donation" id="d1" type="radio" class="css-radio">
-                                        <label for="d1" class="css-label">$5</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio custom">
-                                        <input name="donation" id="d2" type="radio" class="css-radio">
-                                        <label for="d2" class="css-label">$20</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio custom">
-                                        <input name="donation" id="d3" type="radio" class="css-radio">
-                                        <label for="d3" class="css-label">$50</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio custom">
-                                        <input name="donation" id="d4" type="radio" class="css-radio">
-                                        <label for="d4" class="css-label">$100</label>
-                                    </div>
-                                </li>
-                                <li class="form-submit">
-                                    <button type="submit">Donate Now</button>
-                                </li>
-                            </ul>
-                        </form>
+                        <h2>Valoriser le metier d'agriculteur en Côte d'Ivoire</h2>
+                        <img src="{{asset('assets/images/img_cacao1.jpg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="volbox">
-                        <img src="images/shakehandicon.png" alt="">
-                        <h5>Become a Volunteer</h5>
-                        <p> Be a volunteer part of our organization and do work on eco friendly projects and make environment clean </p>
-                        <a href="#">Join us Now</a>
+                        <h5></h5>
+                        <p>Premier produit d’exportation et principale source de devises, le cacao fait vivre environ 6 millions d’Ivoiriens, soit plus d’un tiers de la population. Il représente 40% de la production mondiale.
+                            Le cacao se trouve ainsi au centre d’une agriculture exportatrice qui constitue la clé de voûte de l’économie nationale depuis l’indépendance en 1960.
+                            La Côte-d’Ivoire est le troisième exportateur mondial de café après le Brésil et la Colombie. Cette brillante position n’a pas été acquise sans effort, et bien des pays, mieux équipés ou plus peuplés, envient cette troisième place.</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="volbox nob">
-                        <img src="images/moneyicon.png" alt="">
-                        <h5>Support & Donate</h5>
-                        <p> We are working on eco friendly projects, in these projects we need your help, donation & support</p>
-                        <a href="#">Support Us</a>
+                        <img src="{{asset('assets/images/img_cafe.jpg')}}" alt="">
+                        <p>Le but de ce concours c'est de valoriser l'agriculture café-cacao en Côte d'Ivoire, tout en insistant sur les bonnes méthodes d'agriculture pour avoir du cacao et du café de bonne qualité leader sur le marché international.  </p>
                     </div>
                 </div>
             </div>
@@ -112,14 +72,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <div class="video-img"> <a href="http://vimeo.com/43338103&amp;width=700" data-rel="prettyPhoto" title="Vimeo video"><i class="fas fa-play"></i></a> <img src="{{asset('assets/images/h2about.jpg')}}" alt=""> </div>
+                    <div class="video-img"> <img src="{{asset('assets/images/img_plan.jpg')}}" alt=""> </div>
                 </div>
                 <div class="col-md-7">
                     <div class="h2-about-txt">
-                        <h3>About ecova</h3>
-                        <h2>Eco-friendly products can be made from scratch.</h2>
-                        <p> If anything’s hot in today’s economy, it’s saving money, including a broad range of green businesses helping people save energy, water, and other resources. </p>
-                        <a class="aboutus" href="#">More About us</a>
+                        <h3>Conditions d'inscription</h3>
+                        <p><img src="{{asset('assets/images/coche.png')}}" alt="" width="20" height="20"> Etre de nationalité Ivoirienne </p>
+                        <p><img src="{{asset('assets/images/coche.png')}}" alt="" width="20" height="20"> Etre agé d'au moins 25 ans</p>
+                        <p><img src="{{asset('assets/images/coche.png')}}" alt="" width="20" height="20"> Avoir une pièce d'identité (CNI, passeport, attestation d'dentité) </p>
+                        <p><img src="{{asset('assets/images/coche.png')}}" alt="" width="20" height="20"> Etre propriétaire d'une plantation de café ou de cacao et avoir les documents légals </p>
+                        <p><img src="{{asset('assets/images/coche.png')}}" alt="" width="20" height="20"> Avoir les pièces d'identité (CNI, passeport, attestation d'identité) de ses employés </p>
+
                     </div>
                 </div>
             </div>

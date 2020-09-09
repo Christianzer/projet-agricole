@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('/concours','Inscription\InscriptionControllers@index')->name('candidat');
 Route::resource('/concours/inscription','InscriptionControllers');
 
+Route::get('/contact',function () {
+return view('Inscription.contact');
+})->name('contact');
+
+Route::get('/finish',function () {
+return view('Inscription.finish');
+})->name('finish');
