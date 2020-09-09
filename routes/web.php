@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('acceuil');
+
+Route::get('/concours','Inscription\InscriptionControllers@index')->name('candidat');
 Route::resource('/concours/inscription','InscriptionControllers');
 
-Route::get('/finish',function (){
-    return view('Inscription.finish');
-});

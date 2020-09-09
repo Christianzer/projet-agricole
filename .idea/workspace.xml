@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="maj5">
+    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="maj3.1">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Inscription/Plantation.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552525.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552627.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599552772.jpg" afterDir="false" />
@@ -48,7 +50,20 @@
       <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599568606.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/dossier/fichier/1599569762.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Inscription/InscriptionControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirCulture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirDiplome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirMethode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/AvoirPiece.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/DossierInscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/candidat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/employe_candidat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Inscription/methode_culture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Inscription/plantation_candidat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183444_create_avoir_diplomes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183643_create_avoir_pieces_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/inscription.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <list id="49ca43ac-8db1-4282-8e04-8699a9fe993f" name="maj" comment="" />
@@ -195,7 +210,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Telegram Desktop/sige" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../laragon/syge-2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -229,10 +244,7 @@
       <workItem from="1599498584680" duration="6000" />
       <workItem from="1599501884589" duration="20525000" />
       <workItem from="1599551000764" duration="5420000" />
-      <workItem from="1599567148148" duration="8757000" />
-      <workItem from="1599598747615" duration="882000" />
-      <workItem from="1599600293668" duration="190000" />
-      <workItem from="1599609804940" duration="254000" />
+      <workItem from="1599567148148" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="create type_pieces">
       <created>1599223934535</created>
@@ -262,21 +274,7 @@
       <option name="project" value="LOCAL" />
       <updated>1599489245941</updated>
     </task>
-    <task id="LOCAL-00005" summary="maj4">
-      <created>1599575067621</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1599575067621</updated>
-    </task>
-    <task id="LOCAL-00006" summary="maj5">
-      <created>1599600432664</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1599600432664</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,9 +298,7 @@
     <MESSAGE value="modif" />
     <MESSAGE value="maj" />
     <MESSAGE value="maj3.1" />
-    <MESSAGE value="maj4" />
-    <MESSAGE value="maj5" />
-    <option name="LAST_COMMIT_MESSAGE" value="maj5" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj3.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">
@@ -317,10 +313,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1599229744179" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599600482044">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599393092842">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599600482044" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599393092842" />
     <state x="348" y="87" key="NewPhpClassDialog" timestamp="1599314177717">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -337,10 +333,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1599489225286" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599575084888">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599489252450">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599575084888" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599489252450" />
     <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599229867550">
       <screen x="0" y="0" width="1366" height="728" />
