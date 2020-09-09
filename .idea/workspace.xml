@@ -19,24 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="maj3.1">
-      <change afterPath="$PROJECT_DIR$/public/assets/images/coche.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cacao.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cacao1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_cafe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_enfant3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_pan1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/img_plan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Inscription/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" afterDir="false" />
+    <list default="true" id="f81500ae-b8fa-4fb6-b65a-ff567d5b081d" name="Default Changelist" comment="mise à jour projet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" afterDir="false" />
     </list>
     <list id="49ca43ac-8db1-4282-8e04-8699a9fe993f" name="maj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599489245941</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mise à jour projet">
+      <created>1599667425605</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599667425605</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +262,8 @@
     <MESSAGE value="modif" />
     <MESSAGE value="maj" />
     <MESSAGE value="maj3.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="maj3.1" />
+    <MESSAGE value="mise à jour projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise à jour projet" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">
@@ -310,11 +303,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1599489225286" />
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1599666939725">
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1599668152384">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599489252450" />
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599666939725" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599668152384" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599229867550">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
