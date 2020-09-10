@@ -16,6 +16,7 @@ use App\Models\Inscription\type_culture;
 use App\Models\Inscription\type_diplome;
 use App\Models\Inscription\type_piece;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -73,8 +74,8 @@ class InscriptionControllers extends Controller
         $plant_candidat = new Plantation();
         $plant_candidat->localisation_plantation = $request->input('lo_plant');
         $plant_candidat->superficie_plantation = $request->input('sup_plan');
-        if ($request->hasFile('cer_prop')){
-            $filepro = $request->file('cer_prop');
+        if ($request->hasFile('cert_propr')){
+            $filepro = $request->file('cert_propr');
             $extensionpro = $filepro->getClientOriginalExtension();
             $filenamepro = time().'.'.$extensionpro;
             $filepro->move('dossier/fichier/certificat',$filenamepro);
@@ -156,7 +157,7 @@ class InscriptionControllers extends Controller
         $dossier = new DossierInscription();
         $dossier->identifiant_candidat = $candidat->mail_candidat;
         $mot_de_passe = Str::random();
-        $dossier->mot_de_passe = Hash::make($mot_de_passe);
+        $dossier->mot_de_passe = $mot_de_passe;
         $dossier->id_cand = $candidat->id;
         $dossier->id_plant = $plant_candidat->id;
         $dossier->id_empl_cand = $employe->id;
@@ -166,12 +167,31 @@ class InscriptionControllers extends Controller
 
         if ($result_cand && $result_plant && $result_dipl && $result_piece && $result_empl && $result_empl && $result_meth && $result_cult && $result_dossier ){
             //redirection
-
-            return view('Inscription/finish')->with('dossiers',$dossier);
+            $idef = $dossier->identifiant_candidat;
+            return view('Inscription.finish',['identifiant'=>$idef,'mdp'=>$mot_de_passe]);
         }
 
 
+
     }
+
+    public function connexion(){
+        return view('connexion');
+    }
+
+    public function connecter(Request $request){
+        $identifiant = $request->input('email');
+        $mdp = $request->input('pass');
+        $result = DB::select('SELECT * FROM dossier_inscriptions WHERE (identifiant_candidat = :id AND mot_de_passe = :mdp)',['id'=>$identifiant,'mdp'=>$mdp]);
+        if ($result){
+            return view('candidat.dashbord_dossier');
+        }
+        else{
+            return view('candidat.error');
+        }
+
+    }
+
 
 
 

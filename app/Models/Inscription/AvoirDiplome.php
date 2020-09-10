@@ -9,6 +9,6 @@ class AvoirDiplome extends Model
     //
     protected $table = "avoir_diplomes";
     protected $fillable = ['num_dip,img_dip'];
-    protected $timestamps = false;
+    public $timestamps = false;
 
 }

@@ -8,5 +8,5 @@ class type_diplome extends Model
     //
     protected $table = "type_diplomes";
     protected $fillable = ['libelle_type_diplomes'];
-    protected $timestamps = false;
+    public $timestamps = false;
 }
