@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(types_diplomes::class);
         $this->call(Methode::class);
         $this->call(Culture::class);
+        $this->call(Etat::class);
 
     }
 }

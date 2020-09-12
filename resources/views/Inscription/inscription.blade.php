@@ -16,7 +16,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="photo">Photo</label>
-                                    <input type="file" name="photo" class="form-control" required id="photo">
+                                    <input type="file" name="photo" class="form-control" required>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="nom">Nom </label>
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="img_piece">Image piece</label>
-                                    <input type="file" class="form-control" required name="img_piece" id="img_piece">
+                                    <input type="file" class="form-control" required name="img_piece">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="img_dipl">Image Diplome</label>
-                                    <input type="file" class="form-control" name="img_dipl" required id="img_dipl">
+                                    <input type="file" class="form-control" name="img_dipl" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="cer_prop">Certificat Propriete</label>
-                                    <input type="file" name="cert_propr" class="form-control" required id="cer_prop">
+                                    <input type="file" name="cert_propr" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="cert_empl">Certificat employe</label>
-                                    <input type="file" name="cert_empl" class="form-control" required id="cert_empl">
+                                    <input type="file" name="cert_empl" class="form-control" required >
                                 </div>
                             </div>
 

@@ -4,10 +4,10 @@ namespace App\Models\Inscription;
 
 use Illuminate\Database\Eloquent\Model;
 
-class type_culture extends Model
+class Etat extends Model
 {
     //
-    protected $table = "type_cultures";
-    protected $fillable = ['libelle_type_cultures'];
+    protected $table = 'etats';
+    protected $fillable = 'libelle_etat';
     public $timestamps = false;
 }

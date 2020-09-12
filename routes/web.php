@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,9 @@ Route::get('/candidat/connexion','InscriptionControllers@connexion')->name('logi
 Route::post('candidat/connexion/login','InscriptionControllers@connecter')->name('conect');
 
 Route::get('/administrateur','Admin\AdminControllers@index')->name('admin.index');
+
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});

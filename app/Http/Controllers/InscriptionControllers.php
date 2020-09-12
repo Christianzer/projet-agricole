@@ -29,147 +29,165 @@ class InscriptionControllers extends Controller
      */
     public function index()
     {
-        //
         //recuperer type pieces
-        $listes_pieces = type_piece::all();
-        $listes_diplomes = type_diplome::all();
-        $listes_cultures = type_culture::all();
-        $listes_methodes = methode_culture::all();
+        $listes_pieces = DB::table("CHRISTIAN.TYPE_PIECES")->select('*')->get();
+        $listes_diplomes = DB::table("CHRISTIAN.TYPE_DIPLOMES")->select('*')->get();
+        $listes_cultures = DB::table("CHRISTIAN.TYPE_CULTURES")->select('*')->get();
+        $listes_methodes = DB::table("CHRISTIAN.METHODE_CULTURES")->select('*')->get();
 
 
 
         //recuperer type diplomes
         return view('Inscription/inscription')->with('listes_pieces',$listes_pieces)->with('listes_diplomes',$listes_diplomes)->with('listes_cultures',$listes_cultures)->with('listes_methodes',$listes_methodes);
+
     }
 
     public function store(Request $request)
     {
 
+        //insertion oracle
 
         //insertion candidat
-        $candidat = new candidat();
-
-
-        $candidat->nom_candidat = $request->input('nom_cand');
-        $candidat->prenom_candidat = $request->input('prenoms_cand');
-        $candidat->date_naiss_candidat = $request->input('date');
-        $candidat->lieu_nais_candidat = $request->input('lieu');
-        $candidat->nationalite_candidat = $request->input('nationalite');
-        $candidat->mail_candidat = $request->input('email');
-        $candidat->contact_candidat = $request->input('contact');
-        if ($request->hasFile('photo')){
-            $file = $request->file('photo');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('dossier/fichier/candidat',$filename);
-            $candidat->photo_candidat = $filename;
-        }else{
-            $candidat->photo_candidat = '';
+        $nom_candidat = $request->input('nom_cand');
+        $prenom_candidat = $request->input('prenoms_cand');
+        $date_naiss_candidat = $request->input('date');
+        $lieu_nais_candidat = $request->input('lieu');
+        $nationalite_candidat = $request->input('nationalite');
+        $mail_candidat = $request->input('email');
+        $contact_candidat = $request->input('contact');
+        if($fileCand = $request->file('photo')){
+            $nameCand = time().time().'.'.$fileCand->getClientOriginalExtension();
+            $target_pathCand =  public_path('/dossiers/candidats/');
+            if($fileCand->move($target_pathCand, $nameCand)) {
+                $photoCand = $nameCand;
+            }
         }
-        $result_cand =(boolean)$candidat->save();
+
+
+        $donne_cand =array(
+            'PHOTO_CANDIDAT'=>$photoCand,
+            'NOM_CANDIDAT'=>$nom_candidat,
+            'PRENOM_CANDIDAT'=>$prenom_candidat,
+            'DATE_NAISS_CANDIDAT'=>$date_naiss_candidat,
+            'LIEU_NAIS_CANDIDAT'=>$lieu_nais_candidat,
+            'NATIONALITE_CANDIDAT'=>$nationalite_candidat,
+            'CONTACT_CANDIDAT'=>$contact_candidat,
+            'MAIL_CANDIDAT'=>$mail_candidat);
+
+        $insertCand = DB::table("CHRISTIAN.CANDIDATS")->insert($donne_cand);
+        $id_cand = DB::select("SELECT MAX(id_cand) as identifiant_cand FROM CHRISTIAN.CANDIDATS");
+        $ident= $id_cand[0]->identifiant_cand ;
+        $identifiantCand = (integer)$ident;
+
+
+        //
+        $num_pi = $request->input('num_pieces');
+        $pieces = $request->input('pieces');
+        if($filePieces = $request->file('img_piece')){
+            $namePieces = time().time().'.'.$filePieces->getClientOriginalExtension();
+            $target_pathPiece =  public_path('/dossiers/pieces/');
+            if($filePieces->move($target_pathPiece, $namePieces)) {
+                $photoPieces = $namePieces;
+            }
+        }
+        $donne_piece = array('PIECES'=>$pieces,'ID_CAND'=>$identifiantCand,'NUM_PI'=>$num_pi,'IMG_PI'=>$photoPieces);
+        $insertPiece = DB::table("CHRISTIAN.AVOIR_PIECES")->insert($donne_piece);
+
+
+        //inserer diplome
+        $num_dip = $request->input('num_dipl');
+        $diplomes = $request->input('diplomes');
+        if($fileDiplome = $request->file('img_dipl')){
+            $nameDiplome = time().time().'.'.$fileDiplome->getClientOriginalExtension();
+            $target_pathDiplome =  public_path('/dossiers/diplomes/');
+            if($fileDiplome->move($target_pathDiplome, $nameDiplome)) {
+                $photoDiplome = $nameDiplome;
+            }
+        }
+
+        $donne_diplome = array('DIPLOMES'=>$diplomes,'ID_CAND'=>$identifiantCand,'NUM_DIP'=>$num_dip,'IMG_DIP'=>$photoDiplome);
+        $insertDiplome = DB::table("CHRISTIAN.AVOIR_DIPLOMES")->insert($donne_diplome);
 
 
 
         //insertion plantation
-        $plant_candidat = new Plantation();
-        $plant_candidat->localisation_plantation = $request->input('lo_plant');
-        $plant_candidat->superficie_plantation = $request->input('sup_plan');
-        if ($request->hasFile('cert_propr')){
-            $filepro = $request->file('cert_propr');
-            $extensionpro = $filepro->getClientOriginalExtension();
-            $filenamepro = time().'.'.$extensionpro;
-            $filepro->move('dossier/fichier/certificat',$filenamepro);
-            $plant_candidat->certificat_propriete = $filepro;
-        }else{
-            $plant_candidat->certificat_propriete = '';
+        $localisation_plantation = $request->input('lo_plant');
+        $superficie_plantation = $request->input('sup_plan');
+        if($filePlantation = $request->file('cert_propr')){
+            $namePlantation = time().time().'.'.$filePlantation->getClientOriginalExtension();
+            $target_pathPlantation =  public_path('/dossiers/plantation/');
+            if($filePlantation->move($target_pathPlantation, $namePlantation)) {
+                $photoPlantation = $namePlantation;
+            }
         }
+        $donne_plant = array(
+            'LOCALISATION_PLANTATION'=>$localisation_plantation,
+            'SUPERFICIE_PLANTATION'=>$superficie_plantation,
+            'CERTIFICAT_PROPRIETE'=>$photoPlantation);
 
-        $result_plant = (boolean) $plant_candidat->save();
-
-
+        $insertPlant = DB::table("CHRISTIAN.PLANTATION_CANDIDATS")->insert($donne_plant);
+        $id_plant = DB::select("SELECT MAX(id_plant) as identifiant_plant FROM CHRISTIAN.PLANTATION_CANDIDATS");
+        $identPl= $id_plant[0]->identifiant_plant ;
+        $identifiantPlant = (integer)$identPl;
 
 
         //insertion employer
-        $employe = new employe_candidat();
-        $employe->nombre_employe = $request->input('nbre_empl');
-        $employe->nombre_femme = $request->input('nbre_fem');
-        $employe->salaire_moyen = $request->input('salaire');
-        $employe->mineur = $request->input('mineur');
-        if ($request->hasFile('cert_empl')){
-            $fileemp = $request->file('cert_empl');
-            $extensionemp = $fileemp->getClientOriginalExtension();
-            $filenaemp = time().'.'.$extensionemp;
-            $fileemp->move('dossier/fichier/employe',$filenaemp);
-            $employe->certificat_employe = $fileemp;
-        }else{
-            $employe->certificat_employe = '';
+        $nombre_employe = $request->input('nbre_empl');
+        $nombre_femme = $request->input('nbre_fem');
+        $salaire_moyen = $request->input('salaire');
+        $mineur = $request->input('mineur');
+        if($fileEmploye = $request->file('cert_empl')){
+            $nameEmploye = time().time().'.'.$fileEmploye->getClientOriginalExtension();
+            $target_pathEmployer =  public_path('/dossiers/employe/');
+            if($fileEmploye->move($target_pathPlantation, $nameEmploye)) {
+                $photoEmploye = $nameEmploye;
+            }
         }
-        $result_empl =(boolean)$employe->save();
+        $donne_empl = array(
+            'NOMBRE_EMPLOYE'=>$nombre_employe,
+            'NOMBRE_FEMME'=>$nombre_femme,
+            'SALAIRE_MOYEN'=>$salaire_moyen,
+            'MINEUR'=>$mineur,
+            'CERTIFICAT_EMPLOYE'=>$photoEmploye);
+
+        $insertEmpl = DB::table("CHRISTIAN.EMPLOYE_CANDIDATS")->insert($donne_empl);
+        $id_empl = DB::select("SELECT MAX(ID_EMPL_CAND) as identifiant_empl FROM CHRISTIAN.EMPLOYE_CANDIDATS");
+        $identEmpl= $id_empl[0]->identifiant_empl ;
+        $identifiantEmpl = (integer)$identEmpl;
 
 
-        //inserer piece
-        $piece = new AvoirPiece();
-        $piece->num_pi = $request->input('num_pieces');
-        $piece->pieces = $request->input('pieces');
-        $piece->id_cand = $candidat->id;
-        if ($request->hasFile('img_piece')){
-            $filepiece = $request->file('img_piece');
-            $extensionpiece = $filepiece->getClientOriginalExtension();
-            $filenamepiece = time().'.'.$extensionpiece;
-            $filepiece->move('dossier/fichier/pieces',$filenamepiece);
-            $piece->img_pi = $filepiece;
-        }else{
-            $piece->img_pi = '';
-        }
-        $result_piece =(boolean)$piece->save();
-
-
-        //inserer diplome
-        $diplome = new AvoirDiplome();
-        $diplome->num_dip = $request->input('num_dipl');
-        $diplome->diplomes = $request->input('diplomes');
-        $diplome->id_cand = $candidat->id;
-
-        if ($request->hasFile('img_dipl')){
-            $filedipl = $request->file('img_dipl');
-            $extensiondipl = $filedipl->getClientOriginalExtension();
-            $filenamedipl = time().'.'.$extensiondipl;
-            $filedipl->move('dossier/fichier/diplomes',$filenamedipl);
-            $diplome->img_dip = $filedipl;
-        }else{
-            $diplome->img_dip = '';
-        }
-        $result_dipl =(boolean)$diplome->save();
 
         //insertion avoir culture
-        $culture = new AvoirCulture();
-        $culture->id_plant = $plant_candidat->id;
-        $culture->id_type_cult = $request->input('culture');
-        $result_cult =(boolean) $culture->save();
+        $id_type_cult = $request->input('culture');
+        $donne_cult = array('ID_PLANT'=>$identifiantPlant, 'ID_TYPE_CULT'=>$id_type_cult);
+        $insertCult = DB::table("CHRISTIAN.AVOIR_CULTURES")->insert($donne_cult);
 
         //insertion methode
-        $methode = new AvoirMethode();
-        $methode->id_plant = $plant_candidat->id;
-        $methode->id_methode = $request->input('meth_cult');
-        $result_meth=(boolean)$methode->save();
+        $id_methode = $request->input('meth_cult');
+        $donne_meth = array('ID_PLANT'=>$identifiantPlant, 'ID_METHODE'=>$id_methode);
+        $insertMeth = DB::table("CHRISTIAN.AVOIR_METHODES")->insert($donne_meth);
 
         //insertion dossier
-        $dossier = new DossierInscription();
-        $dossier->identifiant_candidat = $candidat->mail_candidat;
+        $identifiant_candidat = $mail_candidat;
         $mot_de_passe = Str::random();
-        $dossier->mot_de_passe = $mot_de_passe;
-        $dossier->id_cand = $candidat->id;
-        $dossier->id_plant = $plant_candidat->id;
-        $dossier->id_empl_cand = $employe->id;
-        $dossier->date_inscription = date('y-d-m');
-        $result_dossier =(boolean) $dossier->save();
+        $date_inscription = date('y-d-m');
+        $donne_dossier = array(
+            'IDENTIFIANT_CANDIDAT'=>$identifiant_candidat,
+            'MOT_DE_PASSE'=>$mot_de_passe,
+            'ID_PLANT'=>$identifiantPlant,
+            'ID_CAND'=>$identifiantCand,
+            'ID_EMPL_CAND'=>$identifiantEmpl,
+            'DATE_INSCRIPTION'=>$date_inscription);
+
+        $insertDossier = DB::table("CHRISTIAN.DOSSIER_INSCRIPTIONS")->insert($donne_dossier);
 
 
-        if ($result_cand && $result_plant && $result_dipl && $result_piece && $result_empl && $result_empl && $result_meth && $result_cult && $result_dossier ){
-            //redirection
-            $idef = $dossier->identifiant_candidat;
-            return view('Inscription.finish',['identifiant'=>$idef,'mdp'=>$mot_de_passe]);
+        if ($insertCand && $insertPiece && $insertCult && $insertEmpl && $insertDiplome && $insertPlant && $insertMeth && $insertDossier){
+
+            return view('Inscription.finish')->with(['identifiant'=>$identifiant_candidat,'mdp'=>$mot_de_passe]);
+
         }
+
 
 
 
@@ -180,11 +198,35 @@ class InscriptionControllers extends Controller
     }
 
     public function connecter(Request $request){
-        $identifiant = $request->input('email');
+
+        /*oracle
+
+         $identifiant = $request->input('email');
         $mdp = $request->input('pass');
-        $result = DB::select('SELECT * FROM dossier_inscriptions WHERE (identifiant_candidat = :id AND mot_de_passe = :mdp)',['id'=>$identifiant,'mdp'=>$mdp]);
+
+        $result = DB::select('SELECT * FROM CHRISTIAN.DOSSIER_INSCRIPTIONS WHERE (IDENTIFIANT_CANDIDAT = :id AND MOT_DE_PASSE = :mdp)',['id'=>$identifiant,'mdp'=>$mdp]);
         if ($result){
             return view('candidat.dashbord_dossier');
+        }
+        else{
+            return view('candidat.error');
+        }
+
+
+       */
+
+        $identifiant = $request->input('email');
+        $mdp = $request->input('pass');
+
+        $result = DB::table("dossier_inscriptions")
+        ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
+        ->where('identifiant_candidat','=',$identifiant)
+        ->where('mot_de_passe','=',$mdp)
+        ->select('etats.libelle_etat as valider')->get();
+        $valider = $result[0]->valider ;
+
+        if ($result){
+            return view('candidat.dashbord_dossier')->with(['resultat'=>$valider]);
         }
         else{
             return view('candidat.error');
