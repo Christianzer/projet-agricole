@@ -1,0 +1,7 @@
+if($fileAAAA = $request->file('photo')){
+            $nameAAAA = time().time().'.'.$fileAAAA->getClientOriginalExtension();
+            $target_path =  public_path('/dossiers/');
+            if($fileAAAA->move($target_path, $nameAAAA)) {
+                $photoAAAA = $nameAAAA;
+            }
+        }

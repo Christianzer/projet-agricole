@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('candidat.dashbord_dossier')
 
 @section('pages')
     <section class="contact-page wf100 p80">

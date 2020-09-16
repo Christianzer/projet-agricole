@@ -219,14 +219,16 @@ class InscriptionControllers extends Controller
         $mdp = $request->input('pass');
 
         $result = DB::table("dossier_inscriptions")
-        ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
-        ->where('identifiant_candidat','=',$identifiant)
-        ->where('mot_de_passe','=',$mdp)
-        ->select('etats.libelle_etat as valider')->get();
-        $valider = $result[0]->valider ;
+            ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('plantation_candidats','dossier_inscriptions.id_plant','=','plantation_candidats.id_plant')
+            ->join('employe_candidats','dossier_inscriptions.id_empl_cand','=','employe_candidats.id_empl_cand')
+            ->where('identifiant_candidat','=',$identifiant)
+            ->where('mot_de_passe','=',$mdp)
+            ->select('*')->get();
 
         if ($result){
-            return view('candidat.dashbord_dossier')->with(['resultat'=>$valider]);
+            return view('candidat.information')->with('resultat',$result);
         }
         else{
             return view('candidat.error');

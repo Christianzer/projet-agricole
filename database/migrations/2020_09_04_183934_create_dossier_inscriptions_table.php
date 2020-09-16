@@ -20,7 +20,7 @@ class CreateDossierInscriptionsTable extends Migration
             $table->integer('id_plant');
             $table->integer('id_cand');
             $table->integer('id_empl_cand');
-            $table->date('date_inscription');
+            $table->string('date_inscription');
             $table->integer('validation')->default(1);
 
         });

@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id('id_users');
             $table->string('identifiant');
             $table->string('mot_de_passe');
-            $table->timestamps();
+           
         });
     }
 
