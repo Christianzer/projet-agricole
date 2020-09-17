@@ -19,27 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="oracle+apimaj">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/Sms.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/nexmo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16002868161600286816.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16002913191600291319.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16003488981600348898.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16002868161600286816.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16002913191600291319.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16003488981600348898.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16002868161600286816.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16002913191600291319.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16003488981600348898.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002868161600286816.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002913191600291319.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002913191600291319.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16003488981600348898.jpg" afterDir="false" />
+    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="maj index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +235,7 @@
       <workItem from="1600285291371" duration="2309000" />
       <workItem from="1600338405397" duration="422000" />
       <workItem from="1600338852710" duration="3242000" />
-      <workItem from="1600348629573" duration="1706000" />
+      <workItem from="1600348629573" duration="2198000" />
     </task>
     <task id="LOCAL-00001" summary="create type_pieces">
       <created>1599223934535</created>
@@ -318,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600270430363</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="maj index">
+      <created>1600350599581</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600350599581</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +336,8 @@
     <MESSAGE value="fin(ok)" />
     <MESSAGE value="oracle" />
     <MESSAGE value="oracle+apimaj" />
-    <option name="LAST_COMMIT_MESSAGE" value="oracle+apimaj" />
+    <MESSAGE value="maj index" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj index" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">

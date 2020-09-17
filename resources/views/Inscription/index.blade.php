@@ -42,8 +42,8 @@
                         <!--Contact Info Start-->
                         <div class="col-md-4">
                             <div class="c-info">
-                                <h6>Address:</h6>
-                                <p> 4700 Millenia Blvd # 175, Orlando, FL 32839, USA </p>
+                                <h6>Addresse:</h6>
+                                <p> Plateau,Avenue Terrassone de, Fougères </p>
                             </div>
                         </div>
                         <!--Contact Info End-->
@@ -51,17 +51,16 @@
                         <div class="col-md-4">
                             <div class="c-info">
                                 <h6>Contact:</h6>
-                                <p><strong>Phone:</strong> +1 321 2345 678-9</p>
-                                <p><strong>Fax:</strong> +1 321 2345 876-7</p>
+                                <p><strong>Phone:</strong> +225 79 58 87 03</p>
+                                <p><strong>Fax:</strong> +225 22 48 75 12</p>
                             </div>
                         </div>
                         <!--Contact Info End-->
                         <!--Contact Info Start-->
                         <div class="col-md-4">
                             <div class="c-info">
-                                <h6>For More Information:</h6>
-                                <p><strong>Email:</strong> info@ecova.com</p>
-                                <p>contact@ecova.com</p>
+                                <h6>Mail</h6>
+                                <p> concours_cafe-cacao@gouv.ci</p>
                             </div>
                         </div>
                         <!--Contact Info End-->
