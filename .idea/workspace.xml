@@ -19,9 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="maj index">
+    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="maj index2">
+      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16003622341600362234.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16003622341600362234.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16003622341600362234.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16003622341600362234.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +239,8 @@
       <workItem from="1600285291371" duration="2309000" />
       <workItem from="1600338405397" duration="422000" />
       <workItem from="1600338852710" duration="3242000" />
-      <workItem from="1600348629573" duration="2198000" />
+      <workItem from="1600348629573" duration="3025000" />
+      <workItem from="1600360667574" duration="2444000" />
     </task>
     <task id="LOCAL-00001" summary="create type_pieces">
       <created>1599223934535</created>
@@ -307,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600350599581</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="maj index2">
+      <created>1600351180831</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1600351180831</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +349,8 @@
     <MESSAGE value="oracle" />
     <MESSAGE value="oracle+apimaj" />
     <MESSAGE value="maj index" />
-    <option name="LAST_COMMIT_MESSAGE" value="maj index" />
+    <MESSAGE value="maj index2" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj index2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">
