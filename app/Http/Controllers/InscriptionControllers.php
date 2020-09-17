@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Sms;
 use App\Models\Inscription\AvoirCulture;
 use App\Models\Inscription\AvoirDiplome;
 use App\Models\Inscription\AvoirMethode;
@@ -19,6 +20,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class InscriptionControllers extends Controller
 {
@@ -227,13 +229,43 @@ class InscriptionControllers extends Controller
             ->where('mot_de_passe','=',$mdp)
             ->select('*')->get();
 
+        $message = "Votre identifiant est :".$identifiant." Votre mot de passe est :".$mdp;
+        //$this->sendSMS($request->input('contact'),$message);
+
         if ($result){
+            //envoyer le message aussi
             return view('candidat.information')->with('resultat',$result);
         }
         else{
             return view('candidat.error');
         }
 
+    }
+
+    public function sendSMS($phone, $message)
+    {
+        $config = array(
+            'clientId' => config('app.clientId'),
+            'clientSecret' =>  config('app.clientSecret'),
+        );
+
+        $osms = new Sms($config);
+
+        $data = $osms->getTokenFromConsumerKey();
+        $token = array(
+            'token' => $data['access_token']
+        );
+
+
+        $response = $osms->sendSms(
+        // sender
+            'tel:+225620000000',
+            // receiver
+            'tel:+225' . $phone,
+            // message
+            $message,
+            'Agri_concours'
+        );
     }
 
 

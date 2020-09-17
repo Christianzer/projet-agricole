@@ -19,67 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="oracle">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiControllers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/15999400681599940068.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/15999400691599940069.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16001907551600190755.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16001907561600190756.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16001907561600190756.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16001907561600190756.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/candidat/information.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projet-agricole.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet-agricole.iml" afterDir="false" />
+    <list default="true" id="1e30caaa-a08b-4637-b398-f64b305cad8d" name="Default Changelist" comment="oracle+apimaj">
+      <change afterPath="$PROJECT_DIR$/app/Helpers/Sms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/nexmo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16002868161600286816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16002913191600291319.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/candidats/16003488981600348898.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16002868161600286816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16002913191600291319.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/diplomes/16003488981600348898.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16002868161600286816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16002913191600291319.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/pieces/16003488981600348898.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002868161600286816.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002913191600291319.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16002913191600291319.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dossiers/plantation/16003488981600348898.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InscriptionControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_111258_create_candidats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_04_183934_create_dossier_inscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_04_183934_create_dossier_inscriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_11_083041_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_11_083041_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599676389.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599677921.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599677960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599677997.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599678282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599678450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599688086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/candidat/1599688208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599677921.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599677960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599677997.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599678282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599678450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599688086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/certificat/1599688208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599676389.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599677921.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599677960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599677997.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599678282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599678450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599688086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/diplomes/1599688208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599676389.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599677921.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599677960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599677997.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599678282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599678450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599688086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/employe/1599688208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599676389.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599677921.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599677960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599677997.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599678282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599678450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599688086.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dossier/fichier/pieces/1599688208.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/candidat/dashbord_dossier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/candidat/dashbord_dossier.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/candidat/error.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/candidat/error.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Inscription/finish.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,6 +249,11 @@
       <workItem from="1600116007964" duration="27000" />
       <workItem from="1600191155822" duration="2749000" />
       <workItem from="1600243785325" duration="9000" />
+      <workItem from="1600270375152" duration="303000" />
+      <workItem from="1600285291371" duration="2309000" />
+      <workItem from="1600338405397" duration="422000" />
+      <workItem from="1600338852710" duration="3242000" />
+      <workItem from="1600348629573" duration="1706000" />
     </task>
     <task id="LOCAL-00001" summary="create type_pieces">
       <created>1599223934535</created>
@@ -346,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599942722713</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="oracle+apimaj">
+      <created>1600270430363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600270430363</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +346,8 @@
     <MESSAGE value="maj5" />
     <MESSAGE value="fin(ok)" />
     <MESSAGE value="oracle" />
-    <option name="LAST_COMMIT_MESSAGE" value="oracle" />
+    <MESSAGE value="oracle+apimaj" />
+    <option name="LAST_COMMIT_MESSAGE" value="oracle+apimaj" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599545346484">
@@ -397,14 +370,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599695107711" />
-    <state x="348" y="87" key="NewPhpClassDialog" timestamp="1599314177717">
+    <state x="348" y="87" key="NewPhpClassDialog" timestamp="1600338868940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="348" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1599314177717" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599945588040">
+    <state x="348" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1600338868940" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1600338795481">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599945588040" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1600338795481" />
     <state width="535" height="446" key="SwitcherDM" timestamp="1599224395339">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -413,10 +386,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1599489225286" />
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1599696123763">
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1600270496543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599696123763" />
+    <state x="275" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600270496543" />
     <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599223945068" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599671450316">
       <screen x="0" y="0" width="1366" height="728" />

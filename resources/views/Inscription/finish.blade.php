@@ -21,7 +21,7 @@
 <body class="coming-soon">
 <header class="header-style-2">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="{{route('acceuil')}}"><img src="{{asset('assets/images/h2logo.png')}}" alt=""></a>
+        <a class="navbar-brand" href="{{route('acceuil')}}"><img src="{{asset('assets/images/favicon.png')}}" alt="" width="50" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i> </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
