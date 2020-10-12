@@ -18,7 +18,6 @@ class CreateJuryTable extends Migration
             $table->string('identifiant_jury');
             $table->string('mdp_jury');
             $table->string('nom_jury');
-            $table->string('poste_jury');
             $table->timestamps();
         });
     }
