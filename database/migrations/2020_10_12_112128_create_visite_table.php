@@ -19,7 +19,6 @@ class CreateVisiteTable extends Migration
             $table->double('moyenne_obtenue');
             $table->string('date_note');
             $table->integer('etat');
-            $table->timestamps();
         });
     }
 

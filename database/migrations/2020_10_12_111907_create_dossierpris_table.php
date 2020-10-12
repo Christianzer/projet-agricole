@@ -16,9 +16,9 @@ class CreateDossierprisTable extends Migration
         Schema::create('dossierpris', function (Blueprint $table) {
             $table->id('id_dossierpris');
             $table->integer('id_dossierInscription');
-            $table->string('etat_dossier')->default(1);
+            $table->integer('etat_dossier')->default(1);
             $table->string('date_rendez_vous')->default(null);
-            $table->timestamps();
+
         });
     }
 

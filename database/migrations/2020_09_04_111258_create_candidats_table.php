@@ -21,7 +21,7 @@ class CreateCandidatsTable extends Migration
             $table->string("date_naiss_candidat");
             $table->string("lieu_nais_candidat");
             $table->string("nationalite_candidat");
-            $table->integer("contact_candidat");
+            $table->string("contact_candidat");
             $table->string("mail_candidat");
         });
     }
