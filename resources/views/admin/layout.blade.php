@@ -49,7 +49,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.admis')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Liste des candidats admis</span></a>
+                <span>Mise en Place Rendez Vous</span></a>
         </li>
 
         <!-- Divider -->

@@ -112,22 +112,28 @@
                                 </tfoot>
                                 <tbody>
                                 @foreach($cand as $res)
-                                        <tr>
-                                            <td><a href="{{route('dossier.perso',$res->dossier)}}">{{$res->dossier}}</a></td>
-                                            <td>{{$res->nom_candidat}}</td>
-                                            <td>{{$res->prenom_candidat}}</td>
-                                            <td>{{$res->date_inscription}}</td>
-                                            <td>
-                                                @if ($res->validation == 1)
-                                                    <span class="badge badge-primary">{{$res->libelle_etat}}</span>
-                                                @elseif($res->validation == 2)
-                                                    <span class="badge badge-success">{{$res->libelle_etat}}</span>
-                                                @else
-                                                    <span class="badge badge-danger">{{$res->libelle_etat}}</span>
-                                                @endif
+                                    <tr>
+                                        <td>
+                                            @if ($res->validation==1)
+                                                <a href="{{route('dossier.perso',$res->dossier)}}">{{$res->dossier}}</a>
+                                            @else
+                                                {{$res->dossier}}
+                                            @endif
+                                        </td>
+                                        <td>{{$res->nom_candidat}}</td>
+                                        <td>{{$res->prenom_candidat}}</td>
+                                        <td>{{$res->date_inscription}}</td>
+                                        <td>
+                                            @if ($res->validation == 1)
+                                                <span class="badge badge-primary">{{$res->libelle_etat}}</span>
+                                            @elseif($res->validation == 2)
+                                                <span class="badge badge-success">{{$res->libelle_etat}}</span>
+                                            @else
+                                                <span class="badge badge-danger">{{$res->libelle_etat}}</span>
+                                            @endif
 
-                                            </td>
-                                        </tr>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>

@@ -57,20 +57,30 @@ class AdminControllers extends Controller
 
     public function dossier($id){
         $dossier = DB::table('dossier_inscriptions')
-            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
-            ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
             ->where('dossier','=',$id)
-            ->select('*')->get();
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('plantation_candidats','dossier_inscriptions.id_plant','=','plantation_candidats.id_plant')
+            ->join('employe_candidats','dossier_inscriptions.id_empl_cand','=','employe_candidats.id_empl_cand')
+            ->join('avoir_diplomes','candidats.id_cand','=','avoir_diplomes.id_cand')
+            ->join('type_diplomes','type_diplomes.id_type_diplomes','=','avoir_diplomes.diplomes')
+            ->join('avoir_pieces','candidats.id_cand','=','avoir_pieces.id_cand')
+            ->join('type_pieces','type_pieces.id_piece','=','avoir_pieces.pieces')
+            ->join('avoir_methodes','avoir_methodes.id_plant','=','plantation_candidats.id_plant')
+            ->join('methode_cultures','methode_cultures.id_methodes_cultures','=','avoir_methodes.id_methode')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','plantation_candidats.id_plant')
+            ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
+            ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
+            ->get();
         return view('admin.dossier',compact('dossier'));
     }
 
     public function etat(Request $request){
-        //print_r($request->post('etat'));
-        if ($request->post('etat')==1) {
-            echo 'yes';
-        }elseif ($request->post('etat')==2) {
-            echo 'no';
-        }
+        $dossier = DB::table('dossier_inscriptions')
+            ->where('dossier','=',$request->post('codeDossier'))
+            ->update(['validation'=>$request->post('etat')]);
+        $dossier_pris = array('id_dossierInscription'=>$request->post('codeDossier'));
+        $insertDoss = DB::table("dossierpris")->insert($dossier_pris);
+        return redirect()->route('admin.index');
     }
 
     public function admis(){

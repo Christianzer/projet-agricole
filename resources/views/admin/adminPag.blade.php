@@ -26,7 +26,7 @@
                                     <input type="text" name="numDo" class="form-control">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label>Date RenDez Vous</label>
+                                    <label>Date Rendez Vous</label>
                                     <input type="date" name="dateRendez" class="form-control">
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <tbody>
                                 @foreach($resultAdmis as $res)
                                     <tr>
-                                        <td><a href="{{route('dossier.perso',$res->dossier)}}">{{$res->dossier}}</a></td>
+                                        <td>{{$res->dossier}}</td>
                                         <td>{{$res->nom_candidat}}</td>
                                         <td>{{$res->prenom_candidat}}</td>
                                         <td>{{$res->date_inscription}}</td>
