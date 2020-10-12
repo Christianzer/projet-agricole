@@ -14,6 +14,7 @@ class AdminControllers extends Controller
         $result = DB::table('dossier_inscriptions')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
             ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
+            ->orderBy('dossier','ASC')
             ->get();
 
         $nbre = DB::table('dossier_inscriptions')->count('dossier');
