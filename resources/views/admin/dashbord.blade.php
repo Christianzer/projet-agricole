@@ -14,12 +14,62 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
+                <div class="card border-left-secondary shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">NOMBRES DE PARTICIPANT</div>
+                                <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">NOMBRES DE PARTICIPANT</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$nbre}}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">NOMBRES DE PARTICIPANT EN ATTENTE</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$nbreAttente}}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-1">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">NOMBRES DE PARTICIPANT ADMIS</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$nbreAdmin}}</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">NOMBRES DE PARTICIPANT REFUSER</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$nbreEchec}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -62,17 +112,22 @@
                                 </tfoot>
                                 <tbody>
                                 @foreach($cand as $res)
-                                    @if ($res->validation == 1)
                                         <tr>
-                                            <td>{{$res->dossier}}</td>
+                                            <td><a href="{{route('dossier.perso',$res->dossier)}}">{{$res->dossier}}</a></td>
                                             <td>{{$res->nom_candidat}}</td>
                                             <td>{{$res->prenom_candidat}}</td>
                                             <td>{{$res->date_inscription}}</td>
                                             <td>
-                                                <span class="badge badge-primary">{{$res->libelle_etat}}</span>
+                                                @if ($res->validation == 1)
+                                                    <span class="badge badge-primary">{{$res->libelle_etat}}</span>
+                                                @elseif($res->validation == 2)
+                                                    <span class="badge badge-success">{{$res->libelle_etat}}</span>
+                                                @else
+                                                    <span class="badge badge-danger">{{$res->libelle_etat}}</span>
+                                                @endif
+
                                             </td>
                                         </tr>
-                                    @endif
                                 @endforeach
                                 </tbody>
                             </table>

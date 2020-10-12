@@ -43,7 +43,13 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('admin.index')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Tableau de bord</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.admis')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Liste des candidats admis</span></a>
         </li>
 
         <!-- Divider -->

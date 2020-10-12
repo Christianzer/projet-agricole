@@ -229,9 +229,6 @@ class InscriptionControllers extends Controller
             ->where('mot_de_passe','=',$mdp)
             ->select('*')->get();
 
-        $message = "Votre identifiant est :".$identifiant." Votre mot de passe est :".$mdp;
-        //$this->sendSMS($request->input('contact'),$message);
-
         if ($result){
             //envoyer le message aussi
             return view('candidat.information')->with('resultat',$result);
