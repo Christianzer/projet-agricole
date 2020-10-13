@@ -45,7 +45,7 @@ Route::get('/clear-cache', function() {
 
 Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
 
-
+Route::post('/administrateur/admis/validation','Admin\AdminControllers@rendez_vous')->name('rendez.part');
 
 Route::get('/administrateur/dossier/{id}','Admin\AdminControllers@dossier')->name('dossier.perso');
 

@@ -78,19 +78,27 @@ class AdminControllers extends Controller
         $dossier = DB::table('dossier_inscriptions')
             ->where('dossier','=',$request->post('codeDossier'))
             ->update(['validation'=>$request->post('etat')]);
-        $dossier_pris = array('id_dossierInscription'=>$request->post('codeDossier'));
-        $insertDoss = DB::table("dossierpris")->insert($dossier_pris);
+        if ($request->post('etat')==2) {
+            $insertDoss = DB::table("dossierpris")->insert(['dossier'=>(integer)$request->post('codeDossier')]);
+        }
+
         return redirect()->route('admin.index');
     }
 
     public function admis(){
-        $resultAdmis = DB::table('dossier_inscriptions')
+        $resultAdmis = DB::table('dossierpris')
+            ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','dossierpris.dossier')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
-            ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
-            ->where('validation','=',1)
-            ->orderBy('dossier','ASC')
+            ->orderBy('dossier_inscriptions.dossier','ASC')
             ->get();
 
         return view('admin.adminPag',compact('resultAdmis'));
+    }
+
+    public function rendez_vous(Request $request){
+        $dossier = DB::table('dossierpris')
+            ->where('dossier','=',$request->post('numDo'))
+            ->update(['date_rendez_vous'=>$request->post('dateRendez')]);
+        return redirect()->route('admin.admis');
     }
 }
