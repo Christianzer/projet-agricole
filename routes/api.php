@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('mobile','Api\ApiControllers@connexion');
+
+Route::post('mobile/rendez-vous','Api\ApiControllers@rendez_vous')->name('mobile.rendez');

@@ -28,4 +28,9 @@ class ApiControllers extends Controller
 
 
     }
+
+    public function rendez_vous(Request $request){
+
+
+    }
 }
