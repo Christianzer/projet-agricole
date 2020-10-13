@@ -45,6 +45,14 @@ Route::get('/clear-cache', function() {
 
 Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
 
+Route::get('/jury/appreciation','Jury\JuryControllers@appreciation')->name('jury.appreciation');
+
+Route::get('/jury/appreciation/note/{id}','Jury\JuryControllers@notes')->name('jury.note');
+
+Route::get('/jury/deconnexion','Jury\JuryControllers@deconnexion')->name('jury.deconnecter');
+
+Route::post('/jury/connexion','Jury\JuryControllers@connexion')->name('connexion.jury');
+
 Route::post('/administrateur/admis/validation','Admin\AdminControllers@rendez_vous')->name('rendez.part');
 
 Route::get('/administrateur/dossier/{id}','Admin\AdminControllers@dossier')->name('dossier.perso');

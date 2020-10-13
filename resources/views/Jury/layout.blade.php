@@ -33,9 +33,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">
-                JURY
-            </div>
+            <div class="sidebar-brand-text mx-3">Jury</div>
         </a>
 
         <!-- Divider -->
@@ -45,10 +43,13 @@
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>
-                    @yield('nom-jury')
-                </span>
-            </a>
+                <span>Tableau de bord</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('jury.deconnecter')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Deconnexion</span></a>
         </li>
 
         <!-- Divider -->

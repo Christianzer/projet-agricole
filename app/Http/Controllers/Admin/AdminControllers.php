@@ -99,6 +99,10 @@ class AdminControllers extends Controller
         $dossier = DB::table('dossierpris')
             ->where('dossier','=',$request->post('numDo'))
             ->update(['date_rendez_vous'=>$request->post('dateRendez')]);
+        $jury = DB::table('jury')->select('identifiant_jury as identifiant')->get();
+        foreach ($jury as $entre){
+            $entrerVisite = DB::table('visite')->insert(['identifiant_jury'=>$entre->identifiant,'dossier'=>$request->post('numDo')]);
+        }
         return redirect()->route('admin.admis');
     }
 }
