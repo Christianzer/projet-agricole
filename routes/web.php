@@ -41,7 +41,11 @@ Route::get('/clear-cache', function() {
     return "Cache is cleared";
 });
 
-Route::get('/jury/connexion','Jury\JuryControllers@connexion')->name('connect.jury');
+
+
+Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
+
+
 
 Route::get('/administrateur/dossier/{id}','Admin\AdminControllers@dossier')->name('dossier.perso');
 
