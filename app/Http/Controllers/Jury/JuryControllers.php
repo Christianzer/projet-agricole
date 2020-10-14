@@ -57,10 +57,47 @@ class JuryControllers extends Controller
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
             ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
             ->get();
-        if ($doc[0]->id_type_cult == 1) {
-            return view('Jury.formulaireCafe',compact('doc'));
-        }elseif ($doc[0]->id_type_cult == 2){
-            return view('Jury.formulaireCacao',compact('doc'));
+        return view('Jury.formulaire',compact('doc'));
+
+    }
+
+    public function controle(Request $request){
+        //prendre en compte les bonus
+        $cacaoDiv = 13;
+        $cafeDiv = 12;
+        $visite = $request->post('visite');
+        $culture = $request->post('culture');
+        $etat = (double)$request->post('etat');
+        $espace = (double)$request->post('espace');
+        $proprete = (double)$request->post('proprete');
+        $beaute = (double)$request->post('beaute');
+        $sain = (double)$request->post('sain');
+        $gout = (double)$request->post('gout');
+        $humidite = (double)$request->post('humidite');
+        $engrais = (double)$request->post('engrais');
+        $protection = (double)$request->post('protection');
+        $production = (double)$request->post('production');
+        $sechage = (double)$request->post('sechage');
+        $fermentation = (double)$request->post('fermentation');
+        $conservation = (double)$request->post('conservation');
+        $bonus = (double)$request->post('bonus');
+        $appreciation = (double)$request->post('appreciation');
+        $comment = (double)$request->post('comment');
+        $date = date('d-m-y');
+        $total = $etat+$espace+$proprete+$beaute+$sain+$gout+$humidite+$engrais+$protection+$production+$sechage+$fermentation+$conservation+$bonus;
+        if ($culture == 1) {
+            $MoyenneTotal = $total / $cafeDiv;
+        }elseif ($culture == 2){
+            $MoyenneTotal = $total / $cacaoDiv;
         }
+
+        $requete = DB::table('visite')
+            ->where('id_visite','=',$visite)
+            ->update(['moyenne_obtenue'=>$MoyenneTotal,'etat'=>2,'date_note'=>$date,'commentaire'=>$comment,'appreciation'=>$appreciation]);
+        if ($requete) {
+            return redirect()->back();
+        }
+
+
     }
 }

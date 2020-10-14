@@ -41,6 +41,7 @@ Route::get('/clear-cache', function() {
     return "Cache is cleared";
 });
 
+Route::post('/jury/appreciation/controle','Jury\JuryControllers@controle')->name('jury.controle');
 
 
 Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
