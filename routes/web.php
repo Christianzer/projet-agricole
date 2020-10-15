@@ -65,3 +65,7 @@ Route::get('/administrateur/dossier/{id}','Admin\AdminControllers@dossier')->nam
 Route::post('administrateur/dossier/etat','Admin\AdminControllers@etat')->name('dossier.etat');
 
 Route::get('administrateur/admis','Admin\AdminControllers@admis')->name('admin.admis');
+
+Route::get('/candidat/resultat',function (){
+    return view('candidat.information');
+});
