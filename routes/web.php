@@ -43,8 +43,12 @@ Route::get('/clear-cache', function() {
 
 Route::post('/jury/appreciation/controle','Jury\JuryControllers@controle')->name('jury.controle');
 
+Route::get('/administrateur/resultatjuryccafe','Admin\AdminControllers@resultatJuryCafe')->name('admin.resultatCafe');
+Route::get('/administrateur/resultatjurycacao','Admin\AdminControllers@resultatJuryCacao')->name('admin.resultatCacao');
 
 Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
+
+Route::post('/jury/recompense','Admin\AdminControllers@recompense')->name('admin.recompense');
 
 Route::get('/jury/appreciation','Jury\JuryControllers@appreciation')->name('jury.appreciation');
 

@@ -1,6 +1,7 @@
 @extends('Jury.layout')
 @section('pages-jury')
     <!-- Begin Page Content -->
+
     <div class="container-fluid">
 
     <?php
@@ -22,7 +23,7 @@
                         <h6 class="m-0 font-weight-bold text-primary"></h6>
                     </div>
                     <div class="card-body">
-
+                        <h3>CETTE PAGE CONSISTE A NOTER LES CANDIDATS</h3>
                     </div>
                 </div>
             </div>
@@ -43,17 +44,17 @@
                                 <thead>
                                 <tr>
                                     <th>Dossier</th>
-                                    <th>Nom</th>
-                                    <th>Prenoms</th>
+                                    <th>Type Culture</th>
                                     <th>Date Rendez Vous</th>
+                                    <th>Moyenne</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
                                     <th>Dossier</th>
-                                    <th>Nom</th>
-                                    <th>Prenoms</th>
+                                    <th>Type Culture</th>
                                     <th>Date Rendez Vous</th>
+                                    <th>Moyenne</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
@@ -66,10 +67,16 @@
                                                 {{$res->dossier}}
                                             @endif
                                         </td>
-                                        <td>{{$res->nom_candidat}}</td>
-                                        <td>{{$res->prenom_candidat}}</td>
+                                        <td>{{$res->libelle_type_cultures}}</td>
                                         <td>
-                                            <span class="badge badge-success">{{$res->date_rendez_vous}}</span>
+                                            {{$res->date_rendez_vous}}
+                                        </td>
+                                        <td>
+                                            @if ($res->etat==1)
+                                                <span class="badge badge-danger">PAS ENCORE NOTE</span>
+                                            @else
+                                                <span class="badge badge-success">{{$res->moyenne_obtenue}}</span>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

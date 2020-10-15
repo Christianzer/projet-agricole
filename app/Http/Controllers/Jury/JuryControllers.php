@@ -30,6 +30,8 @@ class JuryControllers extends Controller
                 ->where('identifiant_jury','=',$identifiant)
                 ->join('dossierpris','dossierpris.dossier','=','visite.dossier')
                 ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','visite.dossier')
+                ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+                ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
                 ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
                 ->get();
             $request->session()->put(['test'=>$dossierOk,'nom'=>$nom]);
@@ -81,21 +83,37 @@ class JuryControllers extends Controller
         $fermentation = (double)$request->post('fermentation');
         $conservation = (double)$request->post('conservation');
         $bonus = (double)$request->post('bonus');
-        $appreciation = (double)$request->post('appreciation');
-        $comment = (double)$request->post('comment');
+        $appreciation = $request->post('appreciation');
+        $comment = $request->post('comment');
         $date = date('d-m-y');
         $total = $etat+$espace+$proprete+$beaute+$sain+$gout+$humidite+$engrais+$protection+$production+$sechage+$fermentation+$conservation+$bonus;
         if ($culture == 1) {
             $MoyenneTotal = $total / $cafeDiv;
         }elseif ($culture == 2){
-            $MoyenneTotal = $total / $cacaoDiv;
+            $MoyenneTotal = ($total / $cacaoDiv);
         }
 
         $requete = DB::table('visite')
             ->where('id_visite','=',$visite)
             ->update(['moyenne_obtenue'=>$MoyenneTotal,'etat'=>2,'date_note'=>$date,'commentaire'=>$comment,'appreciation'=>$appreciation]);
+
         if ($requete) {
-            return redirect()->back();
+
+            $nbreJury = DB::table('jury')->count('id_jury');
+            $test = DB::table('visite')->selectRaw('dossier,count(etat) as nbretat,sum(moyenne_obtenue) as total')->groupBy('dossier')->where('etat','=',2)->get();
+            $dossier = $test[0]->dossier;
+            $date = date('d-m-y');
+            if ($nbreJury == $test[0]->nbretat) {
+                $total = $test[0]->total;
+                $mg = (float) $total / $nbreJury;
+                $var = array(
+                    'moyennefinal'=>$mg,
+                    'dossier'=>$dossier,
+                    'date_fin'=>$date
+                );
+                $enreMoy = DB::table('resultatfinal')->insert($var);
+            }
+            return redirect()->route('jury.appreciation');
         }
 
 

@@ -91,13 +91,14 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>Dossier</th>
                                     <th>Nom</th>
                                     <th>Prenoms</th>
                                     <th>Date Inscription</th>
+                                    <th>Type Culture</th>
                                     <th>Etat Dossier</th>
                                 </tr>
                                 </thead>
@@ -106,6 +107,7 @@
                                     <th>Dossier</th>
                                     <th>Nom</th>
                                     <th>Prenoms</th>
+                                    <th>Type Culture</th>
                                     <th>Date Inscription</th>
                                     <th>Etat Dossier</th>
                                 </tr>
@@ -123,6 +125,7 @@
                                         <td>{{$res->nom_candidat}}</td>
                                         <td>{{$res->prenom_candidat}}</td>
                                         <td>{{$res->date_inscription}}</td>
+                                        <td>{{$res->libelle_type_cultures}}</td>
                                         <td>
                                             @if ($res->validation == 1)
                                                 <span class="badge badge-primary">{{$res->libelle_etat}}</span>

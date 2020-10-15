@@ -14,13 +14,11 @@ class AdminControllers extends Controller
 
         $result = DB::table('dossier_inscriptions')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
             ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
             ->orderBy('validation','ASC')
             ->get();
-
-
-
-
 
         //nombre de candidat
         $nbreCand = DB::table('dossier_inscriptions')->count('dossier');
@@ -28,10 +26,8 @@ class AdminControllers extends Controller
         //nombre de candidat attente
         $nbreAtt = DB::table('dossier_inscriptions')->where('validation','=',1)->count('dossier');
 
-
         //nombre de candidat admin
         $nbreAdmis = DB::table('dossier_inscriptions')->where('validation','=',2)->count('dossier');
-
 
         //nombre de candidat refuser
         $nbreRefus = DB::table('dossier_inscriptions')->where('validation','=',3)->count('dossier');
@@ -105,4 +101,64 @@ class AdminControllers extends Controller
         }
         return redirect()->route('admin.admis');
     }
+
+    public function resultatJuryCafe(){
+        $resFin = DB::table('resultatfinal')
+            ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','resultatfinal.dossier')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',1)
+            ->orderBy('moyennefinal','DESC')
+            ->select('*')
+            ->get();
+        return view('admin.resultatJuryCafe',compact('resFin'));
+    }
+
+    public function resultatJuryCacao(){
+        $resFin = DB::table('resultatfinal')
+            ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','resultatfinal.dossier')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',2)
+            ->orderBy('moyennefinal','DESC')
+            ->select('*')
+            ->get();
+        return view('admin.resultatJuryCacao',compact('resFin'));
+    }
+
+    public function recompense(Request $request){
+        echo ($request);
+        $dossier = $request->post('numDo');
+        $type = $request->post('type');
+        if($fileSticker = $request->file('sticker')){
+            $nomSticker= time().time().'.'.$fileSticker->getClientOriginalExtension();
+            $target =  public_path('/dossiers/sticker/');
+            if($fileSticker->move($target, $nomSticker)) {
+                $sticker = $nomSticker;
+            }
+        }
+        $var = array('dossier'=>$dossier,'sticker'=>$sticker);
+        $insert = DB::table('recompenser')->insert($var);
+
+        if ($insert) {
+
+            $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2]);
+
+            if ($etatResult) {
+                $select = DB::table('dossier_inscriptions')
+                    ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions')
+                    ->select('dossier')
+                    ->where('avoir_cultures.id_type_cult','=',$type)
+                    ->get();
+
+                foreach ($select as $doc){
+                    DB::table('resultatfinal')->where('dossier','=',$doc->dossier)->update(['etat'=>3]);
+                }
+
+            }
+
+        }
+    }
+
+
 }

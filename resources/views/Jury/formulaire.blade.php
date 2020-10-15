@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <center><h5 class="m-0 font-weight-bold text-primary">  FICHE D'EVALUATION DE LA PARCELLE DOSSIER $doc[0]->dossier CONCERNANT LA CULTURE DU $doc[0]->libelle_type_cultures  </h5></center>
+                <center><h5 class="m-0 font-weight-bold text-primary">  FICHE D'EVALUATION DE LA PARCELLE DOSSIER {{$doc[0]->dossier}} CONCERNANT LA CULTURE DU {{$doc[0]->libelle_type_cultures}}  </h5></center>
             </div>
         </div>
         <form action="{{route('jury.controle')}}" method="post">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="form-group col-md-5 mr-3">
                             <label for="ufr">Appreciation</label>
-                            <select name="appreciation" id="apr">
+                            <select name="appreciation" id="apr" class="form-control">
                                 <option value="mediocre">Mediocre</option>
                                 <option value="insuffisant">Insuffisant</option>
                                 <option value="passable">Passable</option>
@@ -153,15 +153,24 @@
                             <label for="uf">Commentaire</label>
                             <textarea class="form-control" rows="3" name="comment"> </textarea>
                         </div>
-                        <div align="right">
-                            <button  class="btn btn-primary" type="submit" >Valider</button>
-                        </div>
+
                     </div>
+
                 </div>
             </div>
+
+            <br>
+
+            <div align="center">
+                <button type="submit" name="submit" class="btn btn-success btn-lg">VALIDER</button>
+            </div>
+
+
         </form>
 
 
     </div>
+
+    <br>
     <!-- /.container-fluid -->
 @endsection
