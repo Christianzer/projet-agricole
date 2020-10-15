@@ -48,7 +48,7 @@ Route::get('/administrateur/resultatjurycacao','Admin\AdminControllers@resultatJ
 
 Route::get('/jury','Jury\JuryControllers@index')->name('index.jury');
 
-Route::post('/jury/recompense','Admin\AdminControllers@recompense')->name('admin.recompense');
+Route::post('/administrateur/recompense','Admin\AdminControllers@recompense')->name('admin.recompense');
 
 Route::get('/jury/appreciation','Jury\JuryControllers@appreciation')->name('jury.appreciation');
 

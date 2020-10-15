@@ -127,7 +127,6 @@ class AdminControllers extends Controller
     }
 
     public function recompense(Request $request){
-        echo ($request);
         $dossier = $request->post('numDo');
         $type = $request->post('type');
         if($fileSticker = $request->file('sticker')){
@@ -139,23 +138,19 @@ class AdminControllers extends Controller
         }
         $var = array('dossier'=>$dossier,'sticker'=>$sticker);
         $insert = DB::table('recompenser')->insert($var);
-
-        if ($insert) {
-
-            $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2]);
-
-            if ($etatResult) {
-                $select = DB::table('dossier_inscriptions')
-                    ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions')
-                    ->select('dossier')
-                    ->where('avoir_cultures.id_type_cult','=',$type)
-                    ->get();
-
-                foreach ($select as $doc){
-                    DB::table('resultatfinal')->where('dossier','=',$doc->dossier)->update(['etat'=>3]);
-                }
-
+        $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2]);
+        if ($insert && $etatResult) {
+            $select = DB::table('dossier_inscriptions')
+                ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+                ->select('dossier')
+                ->where('dossier_inscriptions.dossier','<>',$dossier)
+                ->where('avoir_cultures.id_type_cult','=',2)
+                ->get();
+            foreach ($select as $doc){
+                DB::table('resultatfinal')->where('dossier','=',$doc->dossier)->update(['etat'=>3]);
             }
+
+            return redirect()->route('admin.index');
 
         }
     }

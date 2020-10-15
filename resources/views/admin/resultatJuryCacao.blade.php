@@ -20,7 +20,7 @@ $n=0;
                         <h6 class="m-0 font-weight-bold text-primary">DELIBERATION</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('admin.recompense')}}" method="post">
+                        <form action="{{route('admin.recompense')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-3 mr-5">
