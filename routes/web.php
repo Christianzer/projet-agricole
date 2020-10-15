@@ -66,6 +66,4 @@ Route::post('administrateur/dossier/etat','Admin\AdminControllers@etat')->name('
 
 Route::get('administrateur/admis','Admin\AdminControllers@admis')->name('admin.admis');
 
-Route::get('/candidat/resultat',function (){
-    return view('candidat.information');
-});
+Route::get('/candidat/resultat',function (){return view('candidat.information');})->name('candidat.resultat');

@@ -190,9 +190,6 @@ class InscriptionControllers extends Controller
 
         }
 
-
-
-
     }
 
     public function connexion(){
@@ -200,69 +197,34 @@ class InscriptionControllers extends Controller
     }
 
     public function connecter(Request $request){
-
-        /*oracle
-
-         $identifiant = $request->input('email');
-        $mdp = $request->input('pass');
-
-        $result = DB::select('SELECT * FROM CHRISTIAN.DOSSIER_INSCRIPTIONS WHERE (IDENTIFIANT_CANDIDAT = :id AND MOT_DE_PASSE = :mdp)',['id'=>$identifiant,'mdp'=>$mdp]);
-        if ($result){
-            return view('candidat.dashbord_dossier');
-        }
-        else{
-            return view('candidat.error');
-        }
-
-
-       */
-
         $identifiant = $request->input('email');
         $mdp = $request->input('pass');
-
         $result = DB::table("dossier_inscriptions")
             ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
-            ->join('plantation_candidats','dossier_inscriptions.id_plant','=','plantation_candidats.id_plant')
-            ->join('employe_candidats','dossier_inscriptions.id_empl_cand','=','employe_candidats.id_empl_cand')
+            ->join('recompenser','recompenser.dossier','=','dossier_inscriptions.dossier')
             ->where('identifiant_candidat','=',$identifiant)
             ->where('mot_de_passe','=',$mdp)
             ->select('*')->get();
-
+        $recompense = DB::table('recompenser')
+            ->where('dossier','=',$result[0]->dossier)
+            ->count('dossier');
         if ($result){
             //envoyer le message aussi
-            return view('candidat.information')->with('resultat',$result);
+            $request->session()->put(['candidat'=>$result,'recompenser'=>$recompense]);
+            return redirect()->route('candidat.resultat');
         }
         else{
-            return view('candidat.error');
+            return redirect()->route('login');
         }
 
     }
 
-    public function sendSMS($phone, $message)
-    {
-        $config = array(
-            'clientId' => config('app.clientId'),
-            'clientSecret' =>  config('app.clientSecret'),
-        );
-
-        $osms = new Sms($config);
-
-        $data = $osms->getTokenFromConsumerKey();
-        $token = array(
-            'token' => $data['access_token']
-        );
-
-
-        $response = $osms->sendSms(
-        // sender
-            'tel:+225620000000',
-            // receiver
-            'tel:+225' . $phone,
-            // message
-            $message,
-            'Agri_concours'
-        );
+    public function logout(){
+        session()->flush();
+        return redirect()->route('acceuil');
     }
 
 

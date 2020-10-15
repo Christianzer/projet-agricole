@@ -29,6 +29,7 @@
                     <li class="nav-item"> <a class="nav-link" href="{{route('acceuil')}}" >ACCUEIL</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('candidat')}}">A PROPOS</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('inscription.index')}}">INSCRIPTION</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('login')}}">RESULTAT</a> </li>
                 </ul>
             </div>
 

@@ -129,6 +129,7 @@ class AdminControllers extends Controller
     public function recompense(Request $request){
         $dossier = $request->post('numDo');
         $type = $request->post('type');
+        $date = date('d-m-y');
         if($fileSticker = $request->file('sticker')){
             $nomSticker= time().time().'.'.$fileSticker->getClientOriginalExtension();
             $target =  public_path('/dossiers/sticker/');
@@ -136,7 +137,7 @@ class AdminControllers extends Controller
                 $sticker = $nomSticker;
             }
         }
-        $var = array('dossier'=>$dossier,'sticker'=>$sticker);
+        $var = array('dossier'=>$dossier,'sticker'=>$sticker,'dateprix'=>$date);
         $insert = DB::table('recompenser')->insert($var);
         $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2]);
         if ($insert && $etatResult) {

@@ -35,7 +35,6 @@ class JuryControllers extends Controller
                 ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
                 ->get();
             $request->session()->put(['test'=>$dossierOk,'nom'=>$nom]);
-
             return redirect()->route('jury.appreciation');
         }else {
             return redirect()->route('index.jury');
