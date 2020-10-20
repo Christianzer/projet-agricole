@@ -32,9 +32,16 @@ $n=0;
                                     <label>Sticker</label>
                                     <input type="file" name="sticker" class="form-control" required>
                                 </div>
-                                <div align="right" class="mt-4">
-                                    <button  class="btn btn-primary btn-lg" type="submit" >Valider</button>
-                                </div>
+                                @if ($countNbrePart == $countNbrResult)
+                                    <div align="right" class="mt-4">
+                                        <button  class="btn btn-primary btn-lg" type="submit" >Valider</button>
+                                    </div>
+                                @else
+                                    <div align="right" class="mt-4">
+                                        <button  class="btn btn-primary btn-lg" type="submit" disabled>Valider</button>
+                                    </div>
+                                @endif
+
                             </div>
 
                         </form>

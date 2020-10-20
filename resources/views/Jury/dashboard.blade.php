@@ -5,8 +5,7 @@
     <div class="container-fluid">
 
     <?php
-    $test = session('test')->all();
-    $nom = session('nom');
+        $nom = session('nom')
     ?>
     <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">

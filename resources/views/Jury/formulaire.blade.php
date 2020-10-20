@@ -1,5 +1,7 @@
 @extends('Jury.layout')
-
+<?php
+$jury = session('identifiant')
+?>
 @section('pages-jury')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -10,6 +12,7 @@
         </div>
         <form action="{{route('jury.controle')}}" method="post">
             @csrf
+            <input type="hidden" name="jury" value="{{$jury}}">
             <input type="hidden" name="visite" value="{{$doc[0]->id_visite}}">
             <input type="hidden" name="culture" value="{{$doc[0]->id_type_cult}}">
 

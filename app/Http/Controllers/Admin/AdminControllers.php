@@ -11,7 +11,6 @@ class AdminControllers extends Controller
     //
     public function index(){
 
-
         $result = DB::table('dossier_inscriptions')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
@@ -111,7 +110,20 @@ class AdminControllers extends Controller
             ->orderBy('moyennefinal','DESC')
             ->select('*')
             ->get();
-        return view('admin.resultatJuryCafe',compact('resFin'));
+        $countNbrResult = DB::table('resultatfinal')
+            ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','resultatfinal.dossier')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',1)->count();
+
+        $countNbrePart = DB::table('dossier_inscriptions')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',1)
+            ->count();
+        var_dump($countNbrResult,$countNbrePart);
+
+        return view('admin.resultatJuryCafe',compact(['resFin','countNbrePart','countNbrResult']));
     }
 
     public function resultatJuryCacao(){
@@ -123,7 +135,22 @@ class AdminControllers extends Controller
             ->orderBy('moyennefinal','DESC')
             ->select('*')
             ->get();
-        return view('admin.resultatJuryCacao',compact('resFin'));
+
+        $countNbrResult = DB::table('resultatfinal')
+            ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','resultatfinal.dossier')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',2)->count();
+
+        $countNbrePart = DB::table('dossier_inscriptions')
+            ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('avoir_cultures.id_type_cult','=',2)
+            ->count();
+
+        var_dump($countNbrResult,$countNbrePart);
+
+        return view('admin.resultatJuryCacao',compact(['resFin','countNbrePart','countNbrResult']));
     }
 
     public function recompense(Request $request){

@@ -171,7 +171,7 @@ class InscriptionControllers extends Controller
 
         //insertion dossier
         $identifiant_candidat = $mail_candidat;
-        $mot_de_passe = Str::random();
+        $mot_de_passe = Str::random(6);
         $date_inscription = date('y-d-m');
         $donne_dossier = array(
             'IDENTIFIANT_CANDIDAT'=>$identifiant_candidat,
@@ -185,7 +185,13 @@ class InscriptionControllers extends Controller
 
 
         if ($insertCand && $insertPiece && $insertCult && $insertEmpl && $insertDiplome && $insertPlant && $insertMeth && $insertDossier){
-
+            $dossierid = DB::select("SELECT MAX(DOSSIER) as iddossier FROM DOSSIER_INSCRIPTIONS");
+            $docid = $dossierid[0]->iddossier;
+            $valueapi = array(
+              'dossierid'=>$docid,
+                'message'=>6
+            );
+            $insetApi = DB::table("notificationapi")->insert($valueapi);
             return view('Inscription.finish')->with(['identifiant'=>$identifiant_candidat,'mdp'=>$mot_de_passe]);
 
         }
@@ -204,16 +210,20 @@ class InscriptionControllers extends Controller
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
             ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
-            ->join('recompenser','recompenser.dossier','=','dossier_inscriptions.dossier')
             ->where('identifiant_candidat','=',$identifiant)
             ->where('mot_de_passe','=',$mdp)
             ->select('*')->get();
         $recompense = DB::table('recompenser')
             ->where('dossier','=',$result[0]->dossier)
             ->count('dossier');
+
+        $recomp =  DB::table('recompenser')
+            ->where('dossier','=',$result[0]->dossier)
+            ->get();
+
         if ($result){
             //envoyer le message aussi
-            $request->session()->put(['candidat'=>$result,'recompenser'=>$recompense]);
+            $request->session()->put(['candidat'=>$result,'recompenser'=>$recompense,'recom'=>$recomp]);
             return redirect()->route('candidat.resultat');
         }
         else{

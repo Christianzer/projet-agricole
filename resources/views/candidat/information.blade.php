@@ -2,6 +2,7 @@
 <?php
 $candidat = session('candidat')->all();
 $recompense = session('recompenser');
+$recomp = session('recom');
 ?>
 @section('js')
 
@@ -78,7 +79,7 @@ $recompense = session('recompenser');
                                             </div>
                                             <div class="input-group">
                                                 <input type="text" class="form-control col-4 mr-4" value="DATE OBTENTION" DISABLED>
-                                                <input type="text" class="form-control col-8" value="{{$candidat[0]->dateprix}}" disabled required>
+                                                <input type="text" class="form-control col-8" value="{{$recomp[0]->dateprix}}" disabled required>
                                             </div>
                                         </div>
                                     </div>

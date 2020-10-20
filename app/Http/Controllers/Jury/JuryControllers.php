@@ -34,8 +34,8 @@ class JuryControllers extends Controller
                 ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
                 ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
                 ->get();
-            $request->session()->put(['test'=>$dossierOk,'nom'=>$nom]);
-            return redirect()->route('jury.appreciation');
+            $request->session()->put(['nom'=>$nom,'identifiant'=>$identifiant]);
+            return view('Jury.dashboard')->with(['test'=>$dossierOk]);
         }else {
             return redirect()->route('index.jury');
         }
@@ -64,6 +64,7 @@ class JuryControllers extends Controller
 
     public function controle(Request $request){
         //prendre en compte les bonus
+        $jury = $request->input('jury');
         $cacaoDiv = 13;
         $cafeDiv = 12;
         $visite = $request->post('visite');
@@ -95,9 +96,7 @@ class JuryControllers extends Controller
         $requete = DB::table('visite')
             ->where('id_visite','=',$visite)
             ->update(['moyenne_obtenue'=>$MoyenneTotal,'etat'=>2,'date_note'=>$date,'commentaire'=>$comment,'appreciation'=>$appreciation]);
-
         if ($requete) {
-
             $nbreJury = DB::table('jury')->count('id_jury');
             $test = DB::table('visite')->selectRaw('dossier,count(etat) as nbretat,sum(moyenne_obtenue) as total')->groupBy('dossier')->where('etat','=',2)->get();
             $dossier = $test[0]->dossier;
@@ -112,7 +111,15 @@ class JuryControllers extends Controller
                 );
                 $enreMoy = DB::table('resultatfinal')->insert($var);
             }
-            return redirect()->route('jury.appreciation');
+            $dossierOk = DB::table('visite')
+                ->where('identifiant_jury','=',$jury)
+                ->join('dossierpris','dossierpris.dossier','=','visite.dossier')
+                ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','visite.dossier')
+                ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+                ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
+                ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
+                ->get();
+            return view('Jury.dashboard')->with(['test'=>$dossierOk]);
         }
 
 
