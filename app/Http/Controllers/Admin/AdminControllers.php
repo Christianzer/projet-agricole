@@ -74,12 +74,18 @@ class AdminControllers extends Controller
             ->where('dossier','=',$request->post('codeDossier'))
             ->update(['validation'=>$request->post('etat')]);
         if ($request->post('etat')==2) {
-            $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('codeDossier'))
-            ->update(['message'=>2]);
+            $valueapi = array(
+                'dossierid'=>$request->post('codeDossier'),
+                'message'=>2
+            );
+            $insetApi = DB::table("notificationapi")->insert($valueapi);
             $insertDoss = DB::table("dossierpris")->insert(['dossier'=>(integer)$request->post('codeDossier')]);
         }else {
-            $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('codeDossier'))
-                ->update(['message'=>3]);
+            $valueapi = array(
+                'dossierid'=>$request->post('codeDossier'),
+                'message'=>3
+            );
+            $insetApi = DB::table("notificationapi")->insert($valueapi);
         }
 
         return redirect()->route('admin.index');
@@ -101,8 +107,12 @@ class AdminControllers extends Controller
         $dossier = DB::table('dossierpris')
             ->where('dossier','=',$request->post('numDo'))
             ->update(['date_rendez_vous'=>$request->post('dateRendez')]);
-        $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('numDo'))
-            ->update(['message'=>4,'info'=>$request->post('dateRendez')]);
+        $valueapi = array(
+            'dossierid'=>$request->post('numDo'),
+            'message'=>4,
+            'info'=>$request->post('dateRendez')
+        );
+        $insetApi = DB::table("notificationapi")->insert($valueapi);
         $jury = DB::table('jury')->select('identifiant_jury as identifiant')->get();
         foreach ($jury as $entre){
             $entrerVisite = DB::table('visite')->insert(['identifiant_jury'=>$entre->identifiant,'dossier'=>$request->post('numDo')]);
@@ -166,7 +176,7 @@ class AdminControllers extends Controller
     public function recompense(Request $request){
         $dossier = $request->post('numDo');
         $type = $request->post('type');
-        $date = date('d-m-y');
+        $date = date('yyyy-MM-dd');
         if($fileSticker = $request->file('sticker')){
             $nomSticker= time().time().'.'.$fileSticker->getClientOriginalExtension();
             $target =  public_path('/dossiers/sticker/');
@@ -179,8 +189,11 @@ class AdminControllers extends Controller
             ->where('dossier_inscriptions.dossier','=',$dossier)
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')->get();
         if ($etatResult) {
-            $insetApi = DB::table("notificationapi")->where('dossierid','=',$dossier)
-                ->update(['message'=>5]);
+            $valueapi = array(
+                'dossierid'=>$dossier,
+                'message'=>5
+            );
+            $insetApi = DB::table("notificationapi")->insert($valueapi);
             $select = DB::table('dossier_inscriptions')
                 ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
                 ->select('dossier')

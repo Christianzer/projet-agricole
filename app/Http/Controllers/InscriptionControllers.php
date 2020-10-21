@@ -172,7 +172,7 @@ class InscriptionControllers extends Controller
         //insertion dossier
         $identifiant_candidat = $mail_candidat;
         $mot_de_passe = Str::random(6);
-        $date_inscription = date('y-d-m');
+        $date_inscription = date('yyyy-MM-dd');
         $donne_dossier = array(
             'IDENTIFIANT_CANDIDAT'=>$identifiant_candidat,
             'MOT_DE_PASSE'=>$mot_de_passe,

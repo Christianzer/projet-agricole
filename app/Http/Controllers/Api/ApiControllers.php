@@ -29,8 +29,8 @@ class ApiControllers extends Controller
     }
 
     public function modifetat(Request $request){
-        $dossier = $request->post('numdossier');
-        $etatDoc = $request->post('etat');
+        $dossier = (int)$request->input('numdossier');
+        $etatDoc = (int)$request->input('etat');
         $result = DB::table("notificationapi")->where('dossierid','=',$dossier)->update(['etat'=>$etatDoc]);
         $resultJson = $result->toJson(JSON_PRETTY_PRINT);
         return response($resultJson, 200);
