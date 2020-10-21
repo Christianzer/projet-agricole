@@ -74,7 +74,12 @@ class AdminControllers extends Controller
             ->where('dossier','=',$request->post('codeDossier'))
             ->update(['validation'=>$request->post('etat')]);
         if ($request->post('etat')==2) {
+            $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('codeDossier'))
+            ->update(['message'=>2]);
             $insertDoss = DB::table("dossierpris")->insert(['dossier'=>(integer)$request->post('codeDossier')]);
+        }else {
+            $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('codeDossier'))
+                ->update(['message'=>3]);
         }
 
         return redirect()->route('admin.index');
@@ -84,6 +89,8 @@ class AdminControllers extends Controller
         $resultAdmis = DB::table('dossierpris')
             ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','dossierpris.dossier')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
+            ->join('AVOIR_CULTURES','AVOIR_CULTURES.id_plant','=','dossier_inscriptions.id_plant')
+            ->join('type_cultures','type_cultures.id_type_cultures','=','AVOIR_CULTURES.id_type_cult')
             ->orderBy('dossier_inscriptions.dossier','ASC')
             ->get();
 
@@ -94,6 +101,8 @@ class AdminControllers extends Controller
         $dossier = DB::table('dossierpris')
             ->where('dossier','=',$request->post('numDo'))
             ->update(['date_rendez_vous'=>$request->post('dateRendez')]);
+        $insetApi = DB::table("notificationapi")->where('dossierid','=',$request->post('numDo'))
+            ->update(['message'=>4,'info'=>$request->post('dateRendez')]);
         $jury = DB::table('jury')->select('identifiant_jury as identifiant')->get();
         foreach ($jury as $entre){
             $entrerVisite = DB::table('visite')->insert(['identifiant_jury'=>$entre->identifiant,'dossier'=>$request->post('numDo')]);
@@ -110,6 +119,7 @@ class AdminControllers extends Controller
             ->orderBy('moyennefinal','DESC')
             ->select('*')
             ->get();
+
         $countNbrResult = DB::table('resultatfinal')
             ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','resultatfinal.dossier')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
@@ -119,9 +129,9 @@ class AdminControllers extends Controller
         $countNbrePart = DB::table('dossier_inscriptions')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('dossier_inscriptions.validation','=',2)
             ->where('avoir_cultures.id_type_cult','=',1)
             ->count();
-        var_dump($countNbrResult,$countNbrePart);
 
         return view('admin.resultatJuryCafe',compact(['resFin','countNbrePart','countNbrResult']));
     }
@@ -145,10 +155,10 @@ class AdminControllers extends Controller
         $countNbrePart = DB::table('dossier_inscriptions')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+            ->where('dossier_inscriptions.validation','=',2)
             ->where('avoir_cultures.id_type_cult','=',2)
             ->count();
 
-        var_dump($countNbrResult,$countNbrePart);
 
         return view('admin.resultatJuryCacao',compact(['resFin','countNbrePart','countNbrResult']));
     }
@@ -164,18 +174,23 @@ class AdminControllers extends Controller
                 $sticker = $nomSticker;
             }
         }
-        $var = array('dossier'=>$dossier,'sticker'=>$sticker,'dateprix'=>$date);
-        $insert = DB::table('recompenser')->insert($var);
-        $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2]);
-        if ($insert && $etatResult) {
+        $etatResult = DB::table('resultatfinal')->where('dossier','=',$dossier)->update(['etat'=>2,'sticker'=>$sticker,'date_resultat'=>$date]);
+        $typeCult = DB::table('dossier_inscriptions')
+            ->where('dossier_inscriptions.dossier','=',$dossier)
+            ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')->get();
+        if ($etatResult) {
+            $insetApi = DB::table("notificationapi")->where('dossierid','=',$dossier)
+                ->update(['message'=>5]);
             $select = DB::table('dossier_inscriptions')
                 ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
                 ->select('dossier')
                 ->where('dossier_inscriptions.dossier','<>',$dossier)
-                ->where('avoir_cultures.id_type_cult','=',2)
+                ->where('avoir_cultures.id_type_cult','=',$typeCult[0]->id_type_cult)
                 ->get();
             foreach ($select as $doc){
                 DB::table('resultatfinal')->where('dossier','=',$doc->dossier)->update(['etat'=>3]);
+                $insetApi = DB::table("notificationapi")->where('dossierid','=',$doc->dossier)
+                    ->update(['message'=>5]);
             }
 
             return redirect()->route('admin.index');

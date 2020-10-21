@@ -64,6 +64,7 @@ $n=0;
                             <th>Prenoms</th>
                             <th>Moyenne Generale</th>
                             <th>Classement</th>
+                            <th>RESULTAT</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -73,6 +74,7 @@ $n=0;
                             <th>Prenoms</th>
                             <th>Moyenne Generale</th>
                             <th>Classement</th>
+                            <TH>RESULTAT</TH>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -86,6 +88,15 @@ $n=0;
                             <td>{{$fin->prenom_candidat}}</td>
                             <td>{{$fin->moyennefinal}}</td>
                             <td>{{$n}}</td>
+                            <td>
+                                @if ($fin->etat == 1)
+                                    <span class="badge badge-primary">RESULTAT NON DISPONIBLE</span>
+                                @elseif($fin->etat == 2)
+                                    <span class="badge badge-success">SUCCES</span>
+                                @else
+                                    <span class="badge badge-danger">ECHEC</span>
+                                @endif
+                            </td>
                         </tr>
                         <?php
                         }

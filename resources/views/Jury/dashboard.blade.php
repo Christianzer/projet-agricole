@@ -5,7 +5,17 @@
     <div class="container-fluid">
 
     <?php
-        $nom = session('nom')
+    $nom = session('nom');
+    $jury = session('identifiant');
+    use Illuminate\Support\Facades\DB;
+    $dossierOk = DB::table('visite')
+        ->where('identifiant_jury','=',$jury)
+        ->join('dossierpris','dossierpris.dossier','=','visite.dossier')
+        ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','visite.dossier')
+        ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
+        ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
+        ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
+        ->get();
     ?>
     <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -57,7 +67,7 @@
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                @foreach($test as $res)
+                                @foreach($dossierOk as $res)
                                     <tr>
                                         <td>
                                             @if ($res->etat==1)

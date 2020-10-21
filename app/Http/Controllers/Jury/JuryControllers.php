@@ -26,16 +26,8 @@ class JuryControllers extends Controller
                 ->where('identifiant_jury','=',$identifiant)
                 ->where('mdp_jury','=',$mdp_jury)->get();
             $nom = $nomJury[0]->nom_jury;
-            $dossierOk = DB::table('visite')
-                ->where('identifiant_jury','=',$identifiant)
-                ->join('dossierpris','dossierpris.dossier','=','visite.dossier')
-                ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','visite.dossier')
-                ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
-                ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
-                ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
-                ->get();
             $request->session()->put(['nom'=>$nom,'identifiant'=>$identifiant]);
-            return view('Jury.dashboard')->with(['test'=>$dossierOk]);
+            return redirect()->route('jury.appreciation');
         }else {
             return redirect()->route('index.jury');
         }
@@ -65,6 +57,7 @@ class JuryControllers extends Controller
     public function controle(Request $request){
         //prendre en compte les bonus
         $jury = $request->input('jury');
+        $doc = $request->post('document');
         $cacaoDiv = 13;
         $cafeDiv = 12;
         $visite = $request->post('visite');
@@ -96,12 +89,19 @@ class JuryControllers extends Controller
         $requete = DB::table('visite')
             ->where('id_visite','=',$visite)
             ->update(['moyenne_obtenue'=>$MoyenneTotal,'etat'=>2,'date_note'=>$date,'commentaire'=>$comment,'appreciation'=>$appreciation]);
+
         if ($requete) {
+
             $nbreJury = DB::table('jury')->count('id_jury');
-            $test = DB::table('visite')->selectRaw('dossier,count(etat) as nbretat,sum(moyenne_obtenue) as total')->groupBy('dossier')->where('etat','=',2)->get();
-            $dossier = $test[0]->dossier;
+
+            $test = DB::table('visite')
+                ->selectRaw('count(etat) as nbretat,sum(moyenne_obtenue) as total')
+                ->groupBy('dossier')
+                ->where('dossier','=',$doc)
+                ->where('etat','=',2)->get();
             $date = date('d-m-y');
             if ($nbreJury == $test[0]->nbretat) {
+                $dossier = $doc;
                 $total = $test[0]->total;
                 $mg = (float) $total / $nbreJury;
                 $var = array(
@@ -111,15 +111,7 @@ class JuryControllers extends Controller
                 );
                 $enreMoy = DB::table('resultatfinal')->insert($var);
             }
-            $dossierOk = DB::table('visite')
-                ->where('identifiant_jury','=',$jury)
-                ->join('dossierpris','dossierpris.dossier','=','visite.dossier')
-                ->join('dossier_inscriptions','dossier_inscriptions.dossier','=','visite.dossier')
-                ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
-                ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
-                ->join('candidats','candidats.id_cand','=','dossier_inscriptions.id_cand')
-                ->get();
-            return view('Jury.dashboard')->with(['test'=>$dossierOk]);
+            return redirect()->route('jury.appreciation');
         }
 
 

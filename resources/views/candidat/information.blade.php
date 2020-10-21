@@ -1,8 +1,6 @@
 @extends('candidat.dashbord_dossier')
 <?php
 $candidat = session('candidat')->all();
-$recompense = session('recompenser');
-$recomp = session('recom');
 ?>
 @section('js')
 
@@ -21,7 +19,16 @@ $recomp = session('recom');
                 </div>
             </div>
         @elseif($candidat[0]->validation == 2)
-            @if ($recompense == 1)
+            @if ($candidat[0]->etat == 1)
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <center><h4 class="m-0 font-weight-bold text-success" align="center">
+                                BONJOUR MR/MME {{$candidat[0]->nom_candidat}} {{$candidat[0]->prenom_candidat}} RESULTAT NON DISPONIBLE PATIENTER
+                            </h4></center>
+                    </div>
+                </div>
+            @elseif($candidat[0]->etat == 2)
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -46,8 +53,8 @@ $recomp = session('recom');
                                         <div class="card-body">
                                             <div>
                                                 <div class="text-left">
-                                                    <img src="{{asset('dossiers/candidats/16001907551600190755.jpg')}}" class="img-thumbnail mr-4" alt="..." width="250px">
-                                                    <img src="{{asset('dossiers/candidats/16001907551600190755.jpg')}}" class="img-thumbnail mr-3" alt="..." width="150px" align="right">
+                                                    <img src="{{asset('dossiers/candidats/'.$candidat[0]->photo_candidat)}}" class="img-thumbnail mr-4" alt="..." width="250px">
+                                                    <img src="{{asset('dossiers/sticker/'.$candidat[0]->sticker)}}" class="img-thumbnail mr-3" alt="..." width="150px" align="right">
                                                 </div>
                                             </div>
 
@@ -79,7 +86,7 @@ $recomp = session('recom');
                                             </div>
                                             <div class="input-group">
                                                 <input type="text" class="form-control col-4 mr-4" value="DATE OBTENTION" DISABLED>
-                                                <input type="text" class="form-control col-8" value="{{$recomp[0]->dateprix}}" disabled required>
+                                                <input type="text" class="form-control col-8" value="{{$candidat[0]->date_resultat}}" disabled required>
                                             </div>
                                         </div>
                                     </div>
@@ -89,18 +96,18 @@ $recomp = session('recom');
                         </div>
                     </div>
                 </div>
-            @elseif($recompense == 0)
+            @else
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <center><h4 class="m-0 font-weight-bold text-success" align="center">
-                                BONJOUR MR/MME {{$candidat[0]->nom_candidat}} {{$candidat[0]->prenom_candidat}} RESULTAT NON DISPONIBLE PATIENTER
+                        <center><h4 class="m-0 font-weight-bold text-danger" align="center">
+                                BONJOUR MR/MME {{$candidat[0]->nom_candidat}} {{$candidat[0]->prenom_candidat}} VOUS AVEZ ECHOUE AU CONCOURS
                             </h4></center>
                     </div>
                 </div>
             @endif
 
-        @elseif($candidat[0]->validation == 3)
+        @elseif($candidat[0]->validation == 3 )
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">

@@ -51,12 +51,13 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>Dossier</th>
                                     <th>Nom</th>
                                     <th>Prenoms</th>
+                                    <th>Type Culture</th>
                                     <th>Date Rendez Vous</th>
                                 </tr>
                                 </thead>
@@ -65,6 +66,7 @@
                                     <th>Dossier</th>
                                     <th>Nom</th>
                                     <th>Prenoms</th>
+                                    <th>Type Culture</th>
                                     <th>Date Rendez Vous</th>
                                 </tr>
                                 </tfoot>
@@ -74,6 +76,7 @@
                                         <td>{{$res->dossier}}</td>
                                         <td>{{$res->nom_candidat}}</td>
                                         <td>{{$res->prenom_candidat}}</td>
+                                        <td>{{$res->libelle_type_cultures}}</td>
                                         <td>
                                             @if ($res->date_rendez_vous == null)
                                                 <span class="badge badge-danger">AUCUN RENDEZ VOUS PROGRAMMER</span>

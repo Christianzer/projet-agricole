@@ -28,7 +28,7 @@
                                     <input type="text" name="numDo" class="form-control" required>
                                     <input type="hidden" name="type" value="1">
                                 </div>
-                                <div class="form-group col-md-4 mr-5">
+                                <div class="form-group col-md-6 mr-5">
                                     <label>Sticker</label>
                                     <input type="file" name="sticker" class="form-control" required>
                                 </div>
@@ -43,7 +43,9 @@
                                 @endif
 
                             </div>
+                            <?php
 
+                            ?>
                         </form>
                     </div>
                 </div>
@@ -64,6 +66,7 @@
                             <th>Prenoms</th>
                             <th>Moyenne Generale</th>
                             <th>Classement</th>
+                            <th>Resultat</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -73,6 +76,7 @@
                             <th>Prenoms</th>
                             <th>Moyenne Generale</th>
                             <th>Classement</th>
+                            <th>Resultat</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -86,6 +90,15 @@
                             <td>{{$fin->prenom_candidat}}</td>
                             <td>{{$fin->moyennefinal}}</td>
                             <td>{{$n}}</td>
+                            <td>
+                                @if ($fin->etat == 1)
+                                    <span class="badge badge-primary">RESULTAT NON DISPONIBLE</span>
+                                @elseif($fin->etat == 2)
+                                    <span class="badge badge-success">SUCCES</span>
+                                @else
+                                    <span class="badge badge-danger">ECHEC</span>
+                                @endif
+                            </td>
                         </tr>
                         <?php
                         }

@@ -1,6 +1,7 @@
 @extends('Jury.layout')
 <?php
-$jury = session('identifiant')
+$jury = session('identifiant');
+
 ?>
 @section('pages-jury')
     <!-- Begin Page Content -->
@@ -15,6 +16,7 @@ $jury = session('identifiant')
             <input type="hidden" name="jury" value="{{$jury}}">
             <input type="hidden" name="visite" value="{{$doc[0]->id_visite}}">
             <input type="hidden" name="culture" value="{{$doc[0]->id_type_cult}}">
+            <input type="hidden" name="document" value="{{$doc[0]->dossier}}">
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">

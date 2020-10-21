@@ -23,6 +23,12 @@
                         <div class="card" style="width: 40rem;">
                             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                             <div class="card-body">
+                                <div>
+                                    <div class="text-right">
+                                        <img src="{{asset('dossiers/candidats/'.$dossier[0]->photo_candidat)}}" class="img-thumbnail mr-4" alt="..." width="150px">
+                                    </div>
+                                </div>
+                                <br>
                                 <p class="card-text">
                                     NOM : {{$dossier[0]->nom_candidat}}
                                     <br>
@@ -38,23 +44,46 @@
                                     <br>
                                     MAIL : {{$dossier[0]-> mail_candidat}}
                                     <br>
-                                    TYPE PIECE : {{$dossier[0]-> libelle_piece}} NUMERO PIECE : {{$dossier[0]-> num_pi }}
+                                    TYPE PIECE : {{$dossier[0]-> libelle_piece}}
                                     <BR>
-                                    TYPE DIPLOME : {{$dossier[0]-> libelle_type_diplomes }} NUMERO DIPLOME : {{$dossier[0]-> num_dip}}
-                                </p>
-                            </div>
-
-                        </div>
-                        <br>
-                        <div class="card" style="width: 30rem;">
-                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                            <div class="card-body">
-                                <p class="card-text">
+                                    NUMERO PIECE : {{$dossier[0]-> num_pi }}
+                                    <br>
+                                    IMAGE DE LA PIECE : <a href="{{asset('dossiers/pieces/'.$dossier[0]->certificat_propriete)}}">CLIQUEZ ICI POUR VOIR L'IMAGE DE LA PIECE</a>
+                                    <br>
+                                    TYPE DIPLOME : {{$dossier[0]-> libelle_type_diplomes }}
+                                    <br>
+                                    NUMERO DIPLOME : {{$dossier[0]-> num_dip}}
+                                    <br>
+                                    IMAGE DU DIPLOME : <a href="{{asset('dossiers/diplomes/'.$dossier[0]->certificat_propriete)}}">CLIQUEZ ICI POUR VOIR L'IMAGE DU DIPLOME</a>
+                                    <br>
                                     LOCALISATION PLANTATION : {{$dossier[0]->localisation_plantation}}
                                     <br>
                                     SUPERFICIE PLANTATION : {{$dossier[0]-> superficie_plantation}}
+                                    <br>
+                                    TYPE DE CULTURE PRATIQUE : {{$dossier[0]->libelle_type_cultures}}
+                                    <br>
+                                    METHODE DE CULTURE : {{$dossier[0]->libelle_methodes_cultures}}
+                                    <BR>
+                                    CERTIFICAT PLANTATION : <a href="{{asset('dossiers/plantation/'.$dossier[0]->certificat_propriete)}}">CLIQUEZ ICI POUR VOIR LE CERTIFICAT</a>
+                                    <br>
+                                    NOMBRE EMPLOYE : {{$dossier[0]->nombre_employe}}
+                                    <br>
+                                    NOMBRE DE FEMMES : {{$dossier[0]->nombre_femme}}
+                                    <br>
+                                    EMPLOYE VOUS DES MINEURS:
+                                    @if ($dossier[0]->mineur == 2)
+                                        OUI
+                                    @else
+                                        NON
+                                    @endif
+                                    <BR>
+                                    SALAIRE MOYEN : {{$dossier[0]->salaire_moyen}}
+                                    <BR>
+                                    CERTIFIACT DES EMPLOYES : <a href="{{asset('dossiers/employe/'.$dossier[0]->certificat_employe)}}">CLIQUEZ ICI POUR VOIR LE CERTIFICAT</a>
+                                    <BR>
                                 </p>
                             </div>
+
                         </div>
                         <!--
 

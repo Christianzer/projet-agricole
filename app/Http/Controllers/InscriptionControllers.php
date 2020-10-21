@@ -189,7 +189,7 @@ class InscriptionControllers extends Controller
             $docid = $dossierid[0]->iddossier;
             $valueapi = array(
               'dossierid'=>$docid,
-                'message'=>6
+                'message'=>1
             );
             $insetApi = DB::table("notificationapi")->insert($valueapi);
             return view('Inscription.finish')->with(['identifiant'=>$identifiant_candidat,'mdp'=>$mot_de_passe]);
@@ -209,21 +209,14 @@ class InscriptionControllers extends Controller
             ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
             ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
+            ->join('resultatfinal','resultatfinal.dossier','=','dossier_inscriptions.dossier')
             ->join('candidats','dossier_inscriptions.id_cand','=','candidats.id_cand')
             ->where('identifiant_candidat','=',$identifiant)
             ->where('mot_de_passe','=',$mdp)
             ->select('*')->get();
-        $recompense = DB::table('recompenser')
-            ->where('dossier','=',$result[0]->dossier)
-            ->count('dossier');
-
-        $recomp =  DB::table('recompenser')
-            ->where('dossier','=',$result[0]->dossier)
-            ->get();
-
         if ($result){
             //envoyer le message aussi
-            $request->session()->put(['candidat'=>$result,'recompenser'=>$recompense,'recom'=>$recomp]);
+            $request->session()->put(['candidat'=>$result]);
             return redirect()->route('candidat.resultat');
         }
         else{
