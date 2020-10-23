@@ -14,8 +14,6 @@ class ApiControllers extends Controller
         $identifiant = $request->input('email');
         $mdp = $request->input('pass');
         $result = DB::table("dossier_inscriptions")
-            ->join('notificationapi','dossier_inscriptions.dossier','=','notificationapi.dossierid')
-            ->join('message','message.id','=','notificationapi.message')
             ->join('etats','dossier_inscriptions.validation','=','etats.id_table')
             ->join('avoir_cultures','avoir_cultures.id_plant','=','dossier_inscriptions.id_plant')
             ->join('type_cultures','type_cultures.id_type_cultures','=','avoir_cultures.id_type_cult')
@@ -28,12 +26,9 @@ class ApiControllers extends Controller
 
     }
 
-    public function modifetat(Request $request){
-        $dossier = (int)$request->input('numdossier');
-        $etatDoc = (int)$request->input('etat');
-        $result = DB::table("notificationapi")->where('dossierid','=',$dossier)->update(['etat'=>$etatDoc]);
-        $resultJson = $result->toJson(JSON_PRETTY_PRINT);
-        return response($resultJson, 200);
+    public function modifetat($numdossier){
+        $result = DB::table("notificationapi")->where('dossierid','=',$numdossier)->update(['etat'=>1]);
+        return $result;
     }
 
     public function notification($identifiant_candidat){

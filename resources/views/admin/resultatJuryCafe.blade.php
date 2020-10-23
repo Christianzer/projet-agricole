@@ -1,5 +1,5 @@
 <?php
-    $n=0;
+$n=0;
 ?>
 @extends('admin.layout')
 @section('pages-admin')
@@ -32,15 +32,10 @@
                                     <label>Sticker</label>
                                     <input type="file" name="sticker" class="form-control" required>
                                 </div>
-                                @if ($countNbrePart == $countNbrResult)
-                                    <div align="right" class="mt-4">
-                                        <button  class="btn btn-primary btn-lg" type="submit" >Valider</button>
-                                    </div>
-                                @else
-                                    <div align="right" class="mt-4">
-                                        <button  class="btn btn-primary btn-lg" type="submit" disabled>Valider</button>
-                                    </div>
-                                @endif
+                                <!-- gerer la bas mettre les if -->
+                                <div align="right" class="mt-4">
+                                    <button  class="btn btn-primary btn-lg" type="submit" >Valider</button>
+                                </div>
 
                             </div>
                             <?php
@@ -82,7 +77,7 @@
                         <tbody>
                         <?php
                         foreach($resFin as $fin){
-                            $n++;
+                        $n++;
                         ?>
                         <tr>
                             <td>{{$fin->dossier}}</td>

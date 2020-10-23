@@ -37,8 +37,6 @@ class InscriptionControllers extends Controller
         $listes_cultures = DB::table("CHRISTIAN.TYPE_CULTURES")->select('*')->get();
         $listes_methodes = DB::table("CHRISTIAN.METHODE_CULTURES")->select('*')->get();
 
-
-
         //recuperer type diplomes
         return view('Inscription/inscription')->with('listes_pieces',$listes_pieces)->with('listes_diplomes',$listes_diplomes)->with('listes_cultures',$listes_cultures)->with('listes_methodes',$listes_methodes);
 

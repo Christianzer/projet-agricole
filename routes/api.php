@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('connexion','Api\ApiControllers@connexion');
 Route::get('notification/{identifiant_candidat}','Api\ApiControllers@notification');
-Route::post('test','Api\ApiControllers@test');
+Route::get('modifetat/{numdossier}','Api\ApiControllers@modifetat');
