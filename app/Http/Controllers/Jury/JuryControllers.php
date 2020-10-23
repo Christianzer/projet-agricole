@@ -99,7 +99,7 @@ class JuryControllers extends Controller
                 ->groupBy('dossier')
                 ->where('dossier','=',$doc)
                 ->where('etat','=',2)->get();
-            $date = date('yyyy-MM-dd');
+            $date = date('Y-M-D');
             if ($nbreJury == $test[0]->nbretat) {
                 $dossier = $doc;
                 $total = $test[0]->total;
