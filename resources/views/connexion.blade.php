@@ -31,9 +31,10 @@
 
 <div class="limiter">
 
+
     <!-- mettre ici -->
     @if(Session::has('success'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>{{ Session::get('success') }}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -41,8 +42,9 @@
         </div>
     @endif
 
-
     <div class="container-login100">
+
+
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
             <form class="login100-form validate-form" action="{{route('conect')}}" method="post">
                 @csrf
