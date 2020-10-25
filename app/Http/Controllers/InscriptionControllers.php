@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Nexmo\Laravel\Facade\Nexmo;
-
+use Session;
 class InscriptionControllers extends Controller
 {
     /**
@@ -170,7 +170,7 @@ class InscriptionControllers extends Controller
         //insertion dossier
         $identifiant_candidat = $mail_candidat;
         $mot_de_passe = Str::random(6);
-        $date_inscription = date('yyyy-MM-dd');
+        $date_inscription = date("d-m-Y");
         $donne_dossier = array(
             'IDENTIFIANT_CANDIDAT'=>$identifiant_candidat,
             'MOT_DE_PASSE'=>$mot_de_passe,
@@ -218,6 +218,7 @@ class InscriptionControllers extends Controller
             return redirect()->route('candidat.resultat');
         }
         else{
+            Session()->flash('success','Identifiant ou Mot de Passe errone.');
             return redirect()->route('login');
         }
 

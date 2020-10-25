@@ -29,6 +29,7 @@ class JuryControllers extends Controller
             $request->session()->put(['nom'=>$nom,'identifiant'=>$identifiant]);
             return redirect()->route('jury.appreciation');
         }else {
+            Session()->flash('success','Identifiant ou Mot de Passe errone.');
             return redirect()->route('index.jury');
         }
 
@@ -78,7 +79,7 @@ class JuryControllers extends Controller
         $bonus = (double)$request->post('bonus');
         $appreciation = $request->post('appreciation');
         $comment = $request->post('comment');
-        $date = date('d-m-y');
+        $date = date('d-m-Y');
         $total = $etat+$espace+$proprete+$beaute+$sain+$gout+$humidite+$engrais+$protection+$production+$sechage+$fermentation+$conservation+$bonus;
         if ($culture == 1) {
             $MoyenneTotal = $total / $cafeDiv;
@@ -111,6 +112,7 @@ class JuryControllers extends Controller
                 );
                 $enreMoy = DB::table('resultatfinal')->insert($var);
             }
+            Session()->flash('success','Visite de la parcelle effectue avec succes.');
             return redirect()->route('jury.appreciation');
         }
 

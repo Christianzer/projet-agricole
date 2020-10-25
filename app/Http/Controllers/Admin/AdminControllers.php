@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class AdminControllers extends Controller
 {
@@ -87,7 +88,7 @@ class AdminControllers extends Controller
             );
             $insetApi = DB::table("notificationapi")->insert($valueapi);
         }
-
+        Session()->flash('success','Etat du dossier affecté avec succes.');
         return redirect()->route('admin.index');
     }
 
@@ -117,6 +118,7 @@ class AdminControllers extends Controller
         foreach ($jury as $entre){
             $entrerVisite = DB::table('visite')->insert(['identifiant_jury'=>$entre->identifiant,'dossier'=>$request->post('numDo')]);
         }
+        Session()->flash('success','Mise en place du rendez vous effectue avec succes.');
         return redirect()->route('admin.admis');
     }
 
@@ -176,7 +178,7 @@ class AdminControllers extends Controller
     public function recompense(Request $request){
         $dossier = $request->post('numDo');
         $type = $request->post('type');
-        $date = date('yyyy-MM-dd');
+        $date = date('d-m-Y');
         if($fileSticker = $request->file('sticker')){
             $nomSticker= time().time().'.'.$fileSticker->getClientOriginalExtension();
             $target =  public_path('/dossiers/sticker/');
@@ -208,7 +210,7 @@ class AdminControllers extends Controller
                 );
                 $insetApi = DB::table("notificationapi")->insert($valueapi);
             }
-
+            Session()->flash('success','Deliberation effectué avec succes.');
             return redirect()->route('admin.index');
 
         }

@@ -1,16 +1,32 @@
 @extends('admin.layout')
 
 @section('pages-admin')
+
     <!-- Begin Page Content -->
     <div class="container-fluid">
+
+
+            <!-- mettre ici -->
+            @if(Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ Session::get('success') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tableau de bord</h1>
         </div>
 
+
+
         <!-- Content Row -->
         <div class="row">
+
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
