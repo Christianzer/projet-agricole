@@ -202,8 +202,11 @@ class AdminControllers extends Controller
                 ->get();
             foreach ($select as $doc){
                 DB::table('resultatfinal')->where('dossier','=',$doc->dossier)->update(['etat'=>3]);
-                $insetApi = DB::table("notificationapi")->where('dossierid','=',$doc->dossier)
-                    ->update(['message'=>5]);
+                $valueapi = array(
+                    'dossierid'=>$doc->dossier,
+                    'message'=>5
+                );
+                $insetApi = DB::table("notificationapi")->insert($valueapi);
             }
 
             return redirect()->route('admin.index');
