@@ -48,16 +48,18 @@ $candidat = session('candidat')->all();
                             <div class="card-body" align="center">
                                 <div class="card" style="width: 40rem;">
                                     <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                                    <div class="login-box">
+                                    <div id="certificat" class="login-box">
                                         <h3>CERTIFICATION {{$candidat[0]->libelle_type_cultures}}</h3>
                                         <div class="card-body">
                                             <div>
                                                 <div class="text-left">
-                                                    <img src="{{asset('dossiers/candidats/'.$candidat[0]->photo_candidat)}}" class="img-thumbnail mr-4" alt="..." width="250px">
-                                                    <img src="{{asset('dossiers/sticker/'.$candidat[0]->sticker)}}" class="img-thumbnail mr-3" alt="..." width="150px" align="right">
+                                                    <img src="{{asset('dossiers/candidats/image1.jpeg')}}" class="img-thumbnail mr-4" alt="..." width="150px">
+                                                    <img src="{{asset('dossiers/sticker/'.$candidat[0]->sticker)}}" class="img-thumbnail mr-3" alt="..." width="100px" align="right">
                                                 </div>
                                             </div>
 
+                                            <br>
+                                            <br>
                                             <br>
                                             <p class="card-text" align="left">
                                             <div class="input-group">
@@ -96,6 +98,12 @@ $candidat = session('candidat')->all();
                         </div>
                     </div>
                 </div>
+                <div align="right">
+                    <button class="btn-lg btn-outline-success" onclick="printDiv('certificat')">IMPRRIMER</button>
+                </div>
+
+                <br>
+                <br>
             @else
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->

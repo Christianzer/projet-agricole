@@ -16,6 +16,7 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/all.min.css')}}" rel="stylesheet">
+
 </head>
 <body>
 <div class="wrapper home2">
@@ -143,7 +144,13 @@
 @yield('js')
 <script src="{{asset('assets/js/isotope.min.js')}}"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
+<script>
+    function printDiv(divName){
 
+
+
+    }
+</script>
 </body>
 
 </html>
