@@ -1,0 +1,1 @@
+style="background-image: url(images/person_1.jpg);"
