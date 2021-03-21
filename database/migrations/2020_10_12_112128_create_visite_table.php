@@ -19,6 +19,9 @@ class CreateVisiteTable extends Migration
             $table->double('moyenne_obtenue');
             $table->string('date_note');
             $table->integer('etat');
+            $table->integer('dossier');
+            $table->string('commentaire');
+            $table->string('appreciation');
         });
     }
 
