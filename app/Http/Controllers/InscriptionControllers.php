@@ -32,10 +32,10 @@ class InscriptionControllers extends Controller
     public function index()
     {
         //recuperer type pieces
-        $listes_pieces = DB::table("CHRISTIAN.TYPE_PIECES")->select('*')->get();
-        $listes_diplomes = DB::table("CHRISTIAN.TYPE_DIPLOMES")->select('*')->get();
-        $listes_cultures = DB::table("CHRISTIAN.TYPE_CULTURES")->select('*')->get();
-        $listes_methodes = DB::table("CHRISTIAN.METHODE_CULTURES")->select('*')->get();
+        $listes_pieces = DB::table("TYPE_PIECES")->select('*')->get();
+        $listes_diplomes = DB::table("TYPE_DIPLOMES")->select('*')->get();
+        $listes_cultures = DB::table("TYPE_CULTURES")->select('*')->get();
+        $listes_methodes = DB::table("METHODE_CULTURES")->select('*')->get();
 
         //recuperer type diplomes
         return view('Inscription/inscription')->with('listes_pieces',$listes_pieces)->with('listes_diplomes',$listes_diplomes)->with('listes_cultures',$listes_cultures)->with('listes_methodes',$listes_methodes);
@@ -74,8 +74,8 @@ class InscriptionControllers extends Controller
             'CONTACT_CANDIDAT'=>$contact_candidat,
             'MAIL_CANDIDAT'=>$mail_candidat);
 
-        $insertCand = DB::table("CHRISTIAN.CANDIDATS")->insert($donne_cand);
-        $id_cand = DB::select("SELECT MAX(id_cand) as identifiant_cand FROM CHRISTIAN.CANDIDATS");
+        $insertCand = DB::table("CANDIDATS")->insert($donne_cand);
+        $id_cand = DB::select("SELECT MAX(id_cand) as identifiant_cand FROM CANDIDATS");
         $ident= $id_cand[0]->identifiant_cand ;
         $identifiantCand = (integer)$ident;
 
@@ -91,7 +91,7 @@ class InscriptionControllers extends Controller
             }
         }
         $donne_piece = array('PIECES'=>$pieces,'ID_CAND'=>$identifiantCand,'NUM_PI'=>$num_pi,'IMG_PI'=>$photoPieces);
-        $insertPiece = DB::table("CHRISTIAN.AVOIR_PIECES")->insert($donne_piece);
+        $insertPiece = DB::table("AVOIR_PIECES")->insert($donne_piece);
 
 
         //inserer diplome
@@ -106,7 +106,7 @@ class InscriptionControllers extends Controller
         }
 
         $donne_diplome = array('DIPLOMES'=>$diplomes,'ID_CAND'=>$identifiantCand,'NUM_DIP'=>$num_dip,'IMG_DIP'=>$photoDiplome);
-        $insertDiplome = DB::table("CHRISTIAN.AVOIR_DIPLOMES")->insert($donne_diplome);
+        $insertDiplome = DB::table("AVOIR_DIPLOMES")->insert($donne_diplome);
 
 
 
@@ -125,8 +125,8 @@ class InscriptionControllers extends Controller
             'SUPERFICIE_PLANTATION'=>$superficie_plantation,
             'CERTIFICAT_PROPRIETE'=>$photoPlantation);
 
-        $insertPlant = DB::table("CHRISTIAN.PLANTATION_CANDIDATS")->insert($donne_plant);
-        $id_plant = DB::select("SELECT MAX(id_plant) as identifiant_plant FROM CHRISTIAN.PLANTATION_CANDIDATS");
+        $insertPlant = DB::table("PLANTATION_CANDIDATS")->insert($donne_plant);
+        $id_plant = DB::select("SELECT MAX(id_plant) as identifiant_plant FROM PLANTATION_CANDIDATS");
         $identPl= $id_plant[0]->identifiant_plant ;
         $identifiantPlant = (integer)$identPl;
 
@@ -150,8 +150,8 @@ class InscriptionControllers extends Controller
             'MINEUR'=>$mineur,
             'CERTIFICAT_EMPLOYE'=>$photoEmploye);
 
-        $insertEmpl = DB::table("CHRISTIAN.EMPLOYE_CANDIDATS")->insert($donne_empl);
-        $id_empl = DB::select("SELECT MAX(ID_EMPL_CAND) as identifiant_empl FROM CHRISTIAN.EMPLOYE_CANDIDATS");
+        $insertEmpl = DB::table("EMPLOYE_CANDIDATS")->insert($donne_empl);
+        $id_empl = DB::select("SELECT MAX(ID_EMPL_CAND) as identifiant_empl FROM EMPLOYE_CANDIDATS");
         $identEmpl= $id_empl[0]->identifiant_empl ;
         $identifiantEmpl = (integer)$identEmpl;
 
@@ -160,12 +160,12 @@ class InscriptionControllers extends Controller
         //insertion avoir culture
         $id_type_cult = $request->input('culture');
         $donne_cult = array('ID_PLANT'=>$identifiantPlant, 'ID_TYPE_CULT'=>$id_type_cult);
-        $insertCult = DB::table("CHRISTIAN.AVOIR_CULTURES")->insert($donne_cult);
+        $insertCult = DB::table("AVOIR_CULTURES")->insert($donne_cult);
 
         //insertion methode
         $id_methode = $request->input('meth_cult');
         $donne_meth = array('ID_PLANT'=>$identifiantPlant, 'ID_METHODE'=>$id_methode);
-        $insertMeth = DB::table("CHRISTIAN.AVOIR_METHODES")->insert($donne_meth);
+        $insertMeth = DB::table("AVOIR_METHODES")->insert($donne_meth);
 
         //insertion dossier
         $identifiant_candidat = $mail_candidat;
@@ -179,7 +179,7 @@ class InscriptionControllers extends Controller
             'ID_EMPL_CAND'=>$identifiantEmpl,
             'DATE_INSCRIPTION'=>$date_inscription);
 
-        $insertDossier = DB::table("CHRISTIAN.DOSSIER_INSCRIPTIONS")->insert($donne_dossier);
+        $insertDossier = DB::table("DOSSIER_INSCRIPTIONS")->insert($donne_dossier);
 
 
         if ($insertCand && $insertPiece && $insertCult && $insertEmpl && $insertDiplome && $insertPlant && $insertMeth && $insertDossier){
